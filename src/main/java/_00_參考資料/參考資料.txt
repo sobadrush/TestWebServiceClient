@@ -1,0 +1,16 @@
+https://blog.csdn.net/qq_14852397/article/details/52761425
+
+https://juejin.im/post/5aadae4bf265da238a303917
+
+https://hk.saowen.com/a/abf15704177a1900f0435cbde0410e1b985cd403c01e452980837c908792a3a4
+
+[使用免费的天气预报webservice]
+https://blog.csdn.net/u010837612/article/details/45726497
+http://www.webxml.com.cn/WebServices/WeatherWebService.asmx?wsdl
+
+[WebService（1）——使用JDK开发WebService]
+https://blog.csdn.net/u010837612/article/details/45724851
+
+http://hans0713.blogspot.com/2008/07/eclipsewebservice.html
+
+http://awpluway.pixnet.net/blog/post/361067046-%E7%94%A8eclipse-%E5%BB%BA%E7%AB%8Bjava-web-service-%E6%95%99%E5%AD%B8
