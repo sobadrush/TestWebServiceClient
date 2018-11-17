@@ -20,10 +20,18 @@ public class MyTestWeather {
 //			System.out.println(i++ + ": " + str);
 //		}
 		
-		String[] supCities = weatherWebServiceSoap.getSupportCity("北京");
+//		String[] supCities = weatherWebServiceSoap.getSupportCity("北京");
+		String[] supCities = weatherWebServiceSoap.getSupportCity("");
 		for (String city : supCities) {
 			System.out.println(" city = " + city);
 		}
+		
+		
+		
+//		String[] cities = weatherWebServiceSoap.getWeatherbyCityName("淮安");
+//		for (String city : cities) {
+//			System.out.println(city);
+//		}
 	}
 
 }

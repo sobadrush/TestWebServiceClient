@@ -161,9 +161,7 @@ public class TestThreadReadFile {
 						try (BufferedWriter bw = IOUtils.buffer(new FileWriter(targetFile, true));) {
 							bw.write(lineStr);
 							bw.newLine();
-
 							Thread.sleep(10);
-
 						} catch (IOException | InterruptedException e1) {
 							e1.printStackTrace();
 						}
