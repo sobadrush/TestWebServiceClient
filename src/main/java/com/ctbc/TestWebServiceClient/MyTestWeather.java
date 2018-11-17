@@ -28,10 +28,10 @@ public class MyTestWeather {
 		
 		
 		
-//		String[] cities = weatherWebServiceSoap.getWeatherbyCityName("淮安");
-//		for (String city : cities) {
-//			System.out.println(city);
-//		}
+		String[] cities = weatherWebServiceSoap.getWeatherbyCityName("淮安");
+		for (String city : cities) {
+			System.out.println(city);
+		}
 	}
 
 }
