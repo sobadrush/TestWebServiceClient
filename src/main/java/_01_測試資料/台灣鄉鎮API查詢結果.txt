@@ -30,6 +30,19 @@ pool-1-thread-1 -  >>> 北投區
 pool-1-thread-1 -  >>> 內湖區
 pool-1-thread-1 -  >>> 南港區
 pool-1-thread-1 -  >>> 文山區
+pool-1-thread-2 , CityName = 宜蘭 , CityId = 5 
+pool-1-thread-2 -  >>> 宜蘭市
+pool-1-thread-2 -  >>> 頭城鎮
+pool-1-thread-2 -  >>> 礁溪鄉
+pool-1-thread-2 -  >>> 壯圍鄉
+pool-1-thread-2 -  >>> 員山鄉
+pool-1-thread-2 -  >>> 羅東鎮
+pool-1-thread-2 -  >>> 三星鄉
+pool-1-thread-2 -  >>> 大同鄉
+pool-1-thread-2 -  >>> 五結鄉
+pool-1-thread-2 -  >>> 冬山鄉
+pool-1-thread-2 -  >>> 蘇澳鎮
+pool-1-thread-2 -  >>> 南澳鄉
 pool-1-thread-5 , CityName = 高雄 , CityId = 17 
 pool-1-thread-5 -  >>> 新興區
 pool-1-thread-5 -  >>> 前金區
@@ -69,19 +82,6 @@ pool-1-thread-5 -  >>> 桃源區
 pool-1-thread-5 -  >>> 那瑪夏區
 pool-1-thread-5 -  >>> 茂林區
 pool-1-thread-5 -  >>> 茄萣區
-pool-1-thread-2 , CityName = 宜蘭 , CityId = 5 
-pool-1-thread-2 -  >>> 宜蘭市
-pool-1-thread-2 -  >>> 頭城鎮
-pool-1-thread-2 -  >>> 礁溪鄉
-pool-1-thread-2 -  >>> 壯圍鄉
-pool-1-thread-2 -  >>> 員山鄉
-pool-1-thread-2 -  >>> 羅東鎮
-pool-1-thread-2 -  >>> 三星鄉
-pool-1-thread-2 -  >>> 大同鄉
-pool-1-thread-2 -  >>> 五結鄉
-pool-1-thread-2 -  >>> 冬山鄉
-pool-1-thread-2 -  >>> 蘇澳鎮
-pool-1-thread-2 -  >>> 南澳鄉
 pool-1-thread-4 , CityName = 嘉義 , CityId = 13 
 pool-1-thread-4 -  >>> 西區
 pool-1-thread-4 -  >>> 東區
@@ -115,13 +115,10 @@ pool-1-thread-3 -  >>> 清水區
 pool-1-thread-3 -  >>> 大甲區
 pool-1-thread-3 -  >>> 外埔區
 pool-1-thread-3 -  >>> 大安區
-pool-1-thread-5 , CityName = 澎湖 , CityId = 18 
-pool-1-thread-5 -  >>> 馬公市
-pool-1-thread-5 -  >>> 西嶼鄉
-pool-1-thread-5 -  >>> 望安鄉
-pool-1-thread-5 -  >>> 七美鄉
-pool-1-thread-5 -  >>> 白沙鄉
-pool-1-thread-5 -  >>> 湖西鄉
+pool-1-thread-2 , CityName = 新竹 , CityId = 6 
+pool-1-thread-2 -  >>> 東區
+pool-1-thread-2 -  >>> 香山區
+pool-1-thread-2 -  >>> 北區
 pool-1-thread-1 , CityName = 基隆 , CityId = 2 
 pool-1-thread-1 -  >>> 仁愛區
 pool-1-thread-1 -  >>> 信義區
@@ -130,36 +127,13 @@ pool-1-thread-1 -  >>> 中山區
 pool-1-thread-1 -  >>> 安樂區
 pool-1-thread-1 -  >>> 暖暖區
 pool-1-thread-1 -  >>> 七堵區
-pool-1-thread-2 , CityName = 新竹 , CityId = 6 
-pool-1-thread-2 -  >>> 東區
-pool-1-thread-2 -  >>> 香山區
-pool-1-thread-2 -  >>> 北區
-pool-1-thread-4 , CityName = 嘉義 , CityId = 14 
-pool-1-thread-4 -  >>> 番路鄉
-pool-1-thread-4 -  >>> 梅山鄉
-pool-1-thread-4 -  >>> 竹崎鄉
-pool-1-thread-4 -  >>> 阿里山鄉
-pool-1-thread-4 -  >>> 中埔鄉
-pool-1-thread-4 -  >>> 大埔鄉
-pool-1-thread-4 -  >>> 水上鄉
-pool-1-thread-4 -  >>> 鹿草鄉
-pool-1-thread-4 -  >>> 太保市
-pool-1-thread-4 -  >>> 朴子市
-pool-1-thread-4 -  >>> 東石鄉
-pool-1-thread-4 -  >>> 六腳鄉
-pool-1-thread-4 -  >>> 新港鄉
-pool-1-thread-4 -  >>> 民雄鄉
-pool-1-thread-4 -  >>> 大林鎮
-pool-1-thread-4 -  >>> 溪口鄉
-pool-1-thread-4 -  >>> 義竹鄉
-pool-1-thread-4 -  >>> 布袋鎮
-pool-1-thread-5 , CityName = 金門 , CityId = 19 
-pool-1-thread-5 -  >>> 金沙鎮
-pool-1-thread-5 -  >>> 金湖鎮
-pool-1-thread-5 -  >>> 金寧鄉
-pool-1-thread-5 -  >>> 金城鎮
-pool-1-thread-5 -  >>> 烈嶼鄉
-pool-1-thread-5 -  >>> 烏坵鄉
+pool-1-thread-5 , CityName = 澎湖 , CityId = 18 
+pool-1-thread-5 -  >>> 馬公市
+pool-1-thread-5 -  >>> 西嶼鄉
+pool-1-thread-5 -  >>> 望安鄉
+pool-1-thread-5 -  >>> 七美鄉
+pool-1-thread-5 -  >>> 白沙鄉
+pool-1-thread-5 -  >>> 湖西鄉
 pool-1-thread-3 , CityName = 彰化 , CityId = 11 
 pool-1-thread-3 -  >>> 彰化市
 pool-1-thread-3 -  >>> 芬園鄉
@@ -187,27 +161,39 @@ pool-1-thread-3 -  >>> 二林鎮
 pool-1-thread-3 -  >>> 大城鄉
 pool-1-thread-3 -  >>> 芳苑鄉
 pool-1-thread-3 -  >>> 二水鄉
-pool-1-thread-4 , CityName = 雲林 , CityId = 15 
-pool-1-thread-4 -  >>> 斗南鎮
-pool-1-thread-4 -  >>> 大埤鄉
-pool-1-thread-4 -  >>> 虎尾鎮
-pool-1-thread-4 -  >>> 土庫鎮
-pool-1-thread-4 -  >>> 褒忠鄉
-pool-1-thread-4 -  >>> 東勢鄉
-pool-1-thread-4 -  >>> 台西鄉
-pool-1-thread-4 -  >>> 崙背鄉
-pool-1-thread-4 -  >>> 麥寮鄉
-pool-1-thread-4 -  >>> 斗六市
-pool-1-thread-4 -  >>> 林內鄉
-pool-1-thread-4 -  >>> 古坑鄉
-pool-1-thread-4 -  >>> 莿桐鄉
-pool-1-thread-4 -  >>> 西螺鎮
-pool-1-thread-4 -  >>> 二崙鄉
-pool-1-thread-4 -  >>> 北港鎮
-pool-1-thread-4 -  >>> 水林鄉
-pool-1-thread-4 -  >>> 口湖鄉
-pool-1-thread-4 -  >>> 四湖鄉
-pool-1-thread-4 -  >>> 元長鄉
+pool-1-thread-2 , CityName = 新竹 , CityId = 7 
+pool-1-thread-2 -  >>> 竹北市
+pool-1-thread-2 -  >>> 湖口鄉
+pool-1-thread-2 -  >>> 新豐鄉
+pool-1-thread-2 -  >>> 新埔鎮
+pool-1-thread-2 -  >>> 關西鎮
+pool-1-thread-2 -  >>> 芎林鄉
+pool-1-thread-2 -  >>> 寶山鄉
+pool-1-thread-2 -  >>> 竹東鎮
+pool-1-thread-2 -  >>> 五峰鄉
+pool-1-thread-2 -  >>> 橫山鄉
+pool-1-thread-2 -  >>> 尖石鄉
+pool-1-thread-2 -  >>> 北埔鄉
+pool-1-thread-2 -  >>> 峨眉鄉
+pool-1-thread-4 , CityName = 嘉義 , CityId = 14 
+pool-1-thread-4 -  >>> 番路鄉
+pool-1-thread-4 -  >>> 梅山鄉
+pool-1-thread-4 -  >>> 竹崎鄉
+pool-1-thread-4 -  >>> 阿里山鄉
+pool-1-thread-4 -  >>> 中埔鄉
+pool-1-thread-4 -  >>> 大埔鄉
+pool-1-thread-4 -  >>> 水上鄉
+pool-1-thread-4 -  >>> 鹿草鄉
+pool-1-thread-4 -  >>> 太保市
+pool-1-thread-4 -  >>> 朴子市
+pool-1-thread-4 -  >>> 東石鄉
+pool-1-thread-4 -  >>> 六腳鄉
+pool-1-thread-4 -  >>> 新港鄉
+pool-1-thread-4 -  >>> 民雄鄉
+pool-1-thread-4 -  >>> 大林鎮
+pool-1-thread-4 -  >>> 溪口鄉
+pool-1-thread-4 -  >>> 義竹鄉
+pool-1-thread-4 -  >>> 布袋鎮
 pool-1-thread-1 , CityName = 新北 , CityId = 3 
 pool-1-thread-1 -  >>> 萬里區
 pool-1-thread-1 -  >>> 金山區
@@ -238,20 +224,67 @@ pool-1-thread-1 -  >>> 八里區
 pool-1-thread-1 -  >>> 淡水區
 pool-1-thread-1 -  >>> 三芝區
 pool-1-thread-1 -  >>> 石門區
-pool-1-thread-2 , CityName = 新竹 , CityId = 7 
-pool-1-thread-2 -  >>> 竹北市
-pool-1-thread-2 -  >>> 湖口鄉
-pool-1-thread-2 -  >>> 新豐鄉
-pool-1-thread-2 -  >>> 新埔鎮
-pool-1-thread-2 -  >>> 關西鎮
-pool-1-thread-2 -  >>> 芎林鄉
-pool-1-thread-2 -  >>> 寶山鄉
-pool-1-thread-2 -  >>> 竹東鎮
-pool-1-thread-2 -  >>> 五峰鄉
-pool-1-thread-2 -  >>> 橫山鄉
-pool-1-thread-2 -  >>> 尖石鄉
-pool-1-thread-2 -  >>> 北埔鄉
-pool-1-thread-2 -  >>> 峨眉鄉
+pool-1-thread-5 , CityName = 金門 , CityId = 19 
+pool-1-thread-5 -  >>> 金沙鎮
+pool-1-thread-5 -  >>> 金湖鎮
+pool-1-thread-5 -  >>> 金寧鄉
+pool-1-thread-5 -  >>> 金城鎮
+pool-1-thread-5 -  >>> 烈嶼鄉
+pool-1-thread-5 -  >>> 烏坵鄉
+pool-1-thread-3 , CityName = 南投 , CityId = 12 
+pool-1-thread-3 -  >>> 南投市
+pool-1-thread-3 -  >>> 中寮鄉
+pool-1-thread-3 -  >>> 草屯鎮
+pool-1-thread-3 -  >>> 國姓鄉
+pool-1-thread-3 -  >>> 埔里鎮
+pool-1-thread-3 -  >>> 仁愛鄉
+pool-1-thread-3 -  >>> 名間鄉
+pool-1-thread-3 -  >>> 集集鎮
+pool-1-thread-3 -  >>> 水里鄉
+pool-1-thread-3 -  >>> 魚池鄉
+pool-1-thread-3 -  >>> 信義鄉
+pool-1-thread-3 -  >>> 竹山鎮
+pool-1-thread-3 -  >>> 鹿谷鄉
+pool-1-thread-1 , CityName = 連江 , CityId = 4 
+pool-1-thread-1 -  >>> 南竿鄉
+pool-1-thread-1 -  >>> 北竿鄉
+pool-1-thread-1 -  >>> 莒光鄉
+pool-1-thread-1 -  >>> 東引鄉
+pool-1-thread-2 , CityName = 桃園 , CityId = 8 
+pool-1-thread-2 -  >>> 中壢區
+pool-1-thread-2 -  >>> 平鎮區
+pool-1-thread-2 -  >>> 龍潭區
+pool-1-thread-2 -  >>> 楊梅區
+pool-1-thread-2 -  >>> 新屋區
+pool-1-thread-2 -  >>> 觀音區
+pool-1-thread-2 -  >>> 桃園區
+pool-1-thread-2 -  >>> 龜山區
+pool-1-thread-2 -  >>> 八德區
+pool-1-thread-2 -  >>> 大溪區
+pool-1-thread-2 -  >>> 復興區
+pool-1-thread-2 -  >>> 大園區
+pool-1-thread-2 -  >>> 蘆竹區
+pool-1-thread-4 , CityName = 雲林 , CityId = 15 
+pool-1-thread-4 -  >>> 斗南鎮
+pool-1-thread-4 -  >>> 大埤鄉
+pool-1-thread-4 -  >>> 虎尾鎮
+pool-1-thread-4 -  >>> 土庫鎮
+pool-1-thread-4 -  >>> 褒忠鄉
+pool-1-thread-4 -  >>> 東勢鄉
+pool-1-thread-4 -  >>> 台西鄉
+pool-1-thread-4 -  >>> 崙背鄉
+pool-1-thread-4 -  >>> 麥寮鄉
+pool-1-thread-4 -  >>> 斗六市
+pool-1-thread-4 -  >>> 林內鄉
+pool-1-thread-4 -  >>> 古坑鄉
+pool-1-thread-4 -  >>> 莿桐鄉
+pool-1-thread-4 -  >>> 西螺鎮
+pool-1-thread-4 -  >>> 二崙鄉
+pool-1-thread-4 -  >>> 北港鎮
+pool-1-thread-4 -  >>> 水林鄉
+pool-1-thread-4 -  >>> 口湖鄉
+pool-1-thread-4 -  >>> 四湖鄉
+pool-1-thread-4 -  >>> 元長鄉
 pool-1-thread-5 , CityName = 屏東 , CityId = 20 
 pool-1-thread-5 -  >>> 屏東市
 pool-1-thread-5 -  >>> 三地門鄉
@@ -324,39 +357,6 @@ pool-1-thread-4 -  >>> 大內區
 pool-1-thread-4 -  >>> 山上區
 pool-1-thread-4 -  >>> 新市區
 pool-1-thread-4 -  >>> 安定區
-pool-1-thread-1 , CityName = 連江 , CityId = 4 
-pool-1-thread-1 -  >>> 南竿鄉
-pool-1-thread-1 -  >>> 北竿鄉
-pool-1-thread-1 -  >>> 莒光鄉
-pool-1-thread-1 -  >>> 東引鄉
-pool-1-thread-3 , CityName = 南投 , CityId = 12 
-pool-1-thread-3 -  >>> 南投市
-pool-1-thread-3 -  >>> 中寮鄉
-pool-1-thread-3 -  >>> 草屯鎮
-pool-1-thread-3 -  >>> 國姓鄉
-pool-1-thread-3 -  >>> 埔里鎮
-pool-1-thread-3 -  >>> 仁愛鄉
-pool-1-thread-3 -  >>> 名間鄉
-pool-1-thread-3 -  >>> 集集鎮
-pool-1-thread-3 -  >>> 水里鄉
-pool-1-thread-3 -  >>> 魚池鄉
-pool-1-thread-3 -  >>> 信義鄉
-pool-1-thread-3 -  >>> 竹山鎮
-pool-1-thread-3 -  >>> 鹿谷鄉
-pool-1-thread-2 , CityName = 桃園 , CityId = 8 
-pool-1-thread-2 -  >>> 中壢區
-pool-1-thread-2 -  >>> 平鎮區
-pool-1-thread-2 -  >>> 龍潭區
-pool-1-thread-2 -  >>> 楊梅區
-pool-1-thread-2 -  >>> 新屋區
-pool-1-thread-2 -  >>> 觀音區
-pool-1-thread-2 -  >>> 桃園區
-pool-1-thread-2 -  >>> 龜山區
-pool-1-thread-2 -  >>> 八德區
-pool-1-thread-2 -  >>> 大溪區
-pool-1-thread-2 -  >>> 復興區
-pool-1-thread-2 -  >>> 大園區
-pool-1-thread-2 -  >>> 蘆竹區
 pool-1-thread-5 , CityName = 台東 , CityId = 21 
 pool-1-thread-5 -  >>> 台東市
 pool-1-thread-5 -  >>> 綠島鄉

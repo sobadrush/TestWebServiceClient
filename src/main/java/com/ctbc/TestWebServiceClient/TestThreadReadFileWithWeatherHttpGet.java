@@ -197,43 +197,47 @@ public class TestThreadReadFileWithWeatherHttpGet {
 				public void run() {
 					// System.out.println(startFinal + " --- " + endFinal);
 
-					StringBuffer sb = new StringBuffer();
+//					synchronized (targetFile) { // (※1※)拿到 targetFile 的thread才可進來進行IO(鎖在這，會等這次的ThreadIO完才換下一個進來)
+						StringBuffer sb = new StringBuffer();
 
-					for (int cityId = startFinal ; cityId <= endFinal ; cityId++) {
+						for (int cityId = startFinal ; cityId <= endFinal ; cityId++) {
 
-						//---------------------------------------
-						String cityName = getCityName(cityId);
-						String strtemp = String.format("%s , CityName = %s , CityId = %d %s", Thread.currentThread().getName(), cityName, cityId, System.lineSeparator());
-						sb.append(strtemp);
-						List<String> townsList = getTaiwanCityTownship(cityId);
-						// System.out.println(Thread.currentThread().getName() + " - cityName = " + cityName);
+							//---------------------------------------
+							String cityName = getCityName(cityId);
+							String strtemp = String.format("%s , CityName = %s , CityId = %d %s", Thread.currentThread().getName(), cityName, cityId, System.lineSeparator());
+							sb.append(strtemp);
+							List<String> townsList = getTaiwanCityTownship(cityId);
+							// System.out.println(Thread.currentThread().getName() + " - cityName = " + cityName);
+							
+							synchronized (targetFile) { // (※2※)拿到 targetFile 的thread才可進來進行IO(鎖在這，IO效能比較好)
+								try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(targetFile, true), StandardCharsets.UTF_8));) {
+									String cityInfo = String.format("%s , CityName = %s , CityId = %d %s", Thread.currentThread().getName(), cityName, cityId, System.lineSeparator());
+									bw.write(cityInfo);
 
-						synchronized (targetFile) { // 拿到 targetFile 的thread才可進來進行IO
-							try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(targetFile, true), StandardCharsets.UTF_8));) {
-								String cityInfo = String.format("%s , CityName = %s , CityId = %d %s", Thread.currentThread().getName(), cityName, cityId, System.lineSeparator());
-								bw.write(cityInfo);
+									for (String town : townsList) {
+										String townsInfo = Thread.currentThread().getName() + " - " + town + System.lineSeparator();
+										bw.write(townsInfo);
+									}
 
-								for (String town : townsList) {
-									String townsInfo = Thread.currentThread().getName() + " - " + town + System.lineSeparator();
-									bw.write(townsInfo);
+								} catch (IOException e) {
+									e.printStackTrace();
 								}
+							} // end-of synchronized (2)
+							
+						}
 
-							} catch (IOException e) {
-								e.printStackTrace();
-							}
-						} // end-of synchronized
+//						try {
+//							synchronized (this.getClass()) {
+//								FileUtils.writeStringToFile(targetFile, sb.toString(), StandardCharsets.UTF_8, true);
+//							}
+//						} catch (IOException e) {
+//							e.printStackTrace();
+//						}
 
 					}
-
-//					try {
-//						synchronized (this.getClass()) {
-//							FileUtils.writeStringToFile(targetFile, sb.toString(), StandardCharsets.UTF_8, true);
-//						}
-//					} catch (IOException e) {
-//						e.printStackTrace();
-//					}
-
-				}
+				
+//				} // end-of synchronized (1)
+				
 			});
 
 			//-------------------
