@@ -6,7 +6,6 @@ import java.nio.channels.FileChannel;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -17,6 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 import javax.xml.rpc.ServiceException;
 
+import org.apache.commons.codec.Charsets;
 import org.apache.commons.io.FileUtils;
 
 import cn.com.webservice.weather.WeatherWebService;
@@ -32,11 +32,10 @@ public class TestThreadReadFileWithWeather {
 		int threadNum = 5;
 		Thread[] threadArray = getMyThreads(threadNum, filePath, fileTargetPath);
 		ExecutorService es = createExecutorService(threadArray, 5);
-		es.shutdown(); // ExecutorService停止接收新的任務並且等待已經提交的任務（包含提交正在執行和提交未執行）執行完成
 
 		boolean isFinshed = false;
 		while (!(isFinshed = es.awaitTermination(2, TimeUnit.SECONDS))) { // 每隔2秒檢查Thread-Pool是否關閉
-//			System.out.println("======= Thread-Pool尚未關閉 =======");
+			System.out.println("======= Thread-Pool尚未關閉 =======");
 		}
 
 		System.out.println("finshed >>> " + (isFinshed == true ? "Thread-Pool已關閉！" : isFinshed));
@@ -100,21 +99,27 @@ public class TestThreadReadFileWithWeather {
 							String cityNameToQuery = lineStr.split(" ")[4].trim();
 							String[] strArray = weatherWebServiceSoap.getWeatherbyCityName(cityNameToQuery);
 							
-							Thread.sleep(1000); // 避免高速訪問被限制
+							Thread.sleep(1); // 避免高速訪問被限制
 							
 							for (String str : strArray) {
+								
 								System.out.println(" >> " + str);
+								
+//								try (BufferedWriter bw = IOUtils.buffer(new FileWriter(targetFile, true));) {
+//									bw.write(lineStr);
+//									bw.newLine();
+//									Thread.sleep(500);
+//								} catch (IOException | InterruptedException e1) {
+//									e1.printStackTrace();
+//								}
 							}
 							
-//						try (BufferedWriter bw = IOUtils.buffer(new FileWriter(targetFile, true));) {
-//							bw.write(lineStr);
-//							bw.newLine();
-//							Thread.sleep(1);
-//						} catch (IOException | InterruptedException e1) {
-//							e1.printStackTrace();
-//						}
+							FileUtils.writeStringToFile(targetFile, lineStr + System.lineSeparator(), Charsets.UTF_8.name(), true);
+							
+//							FileUtils.writeLines(targetFile, Arrays.asList(strArray) , Charsets.UTF_8.name(), true);
+							
 						}
-					} catch (ServiceException | RemoteException | InterruptedException e) {
+					} catch (ServiceException | InterruptedException | IOException e) {
 						e.printStackTrace();
 					}
 
@@ -140,7 +145,8 @@ public class TestThreadReadFileWithWeather {
 		for (int i = 0 ; i < threadNum ; i++) {
 			es.submit(threadArr[i]);
 		}
-
+		
+		es.shutdown(); // ExecutorService停止接收新的任務並且等待已經提交的任務（包含提交正在執行和提交未執行）執行完成
 		return es;
 	}
 
