@@ -32,7 +32,7 @@ public class TestThreadReadFileWithWeatherHttpGet {
 		String filePath = "E:/CTBC_workspace_phantom/TestWebServiceClient/src/main/java/_01_測試資料/台灣鄉鎮API查詢條件.txt";
 		String fileTargetPath = "E:/CTBC_workspace_phantom/TestWebServiceClient/src/main/java/_01_測試資料/台灣鄉鎮API查詢結果.txt";
 		//---------------------------------
-		int threadNum = 22; /* init thread */
+		int threadNum = 5; /* init thread */
 		Thread[] threadArray = getMyThreads(threadNum, filePath, fileTargetPath);
 		ExecutorService es = createExecutorService(threadArray, 22 /* max thread */);
 
@@ -151,11 +151,11 @@ public class TestThreadReadFileWithWeatherHttpGet {
 		List<String> allLinesList = getAllLineList(fromfilePath);
 		int allLineNum = allLinesList.size();
 		System.out.println("allLineNum >>> " + allLineNum);
-		
+
 		if (num > allLineNum) {
 			throw new RuntimeException("線程數不可大於最大資料列數 : " + allLineNum);
 		}
-		
+
 		File targetFile = new File(targetPath);
 		if (!targetFile.exists()) {
 			try {
@@ -207,8 +207,8 @@ public class TestThreadReadFileWithWeatherHttpGet {
 						sb.append(strtemp);
 						List<String> townsList = getTaiwanCityTownship(cityId);
 						// System.out.println(Thread.currentThread().getName() + " - cityName = " + cityName);
-						
-						synchronized (this.getClass()) {
+
+						synchronized (targetFile) { // 拿到 targetFile 的thread才可進來進行IO
 							try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(targetFile, true), StandardCharsets.UTF_8));) {
 								String cityInfo = String.format("%s , CityName = %s , CityId = %d %s", Thread.currentThread().getName(), cityName, cityId, System.lineSeparator());
 								bw.write(cityInfo);
@@ -222,7 +222,7 @@ public class TestThreadReadFileWithWeatherHttpGet {
 								e.printStackTrace();
 							}
 						} // end-of synchronized
-						
+
 					}
 
 //					try {
