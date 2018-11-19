@@ -29,8 +29,11 @@ import com.alibaba.fastjson.JSONObject;
 public class TestThreadReadFileWithWeatherHttpGet {
 
 	public static void main(String[] args) throws InterruptedException {
-		String filePath = "E:/CTBC_workspace_phantom/TestWebServiceClient/src/main/java/_01_測試資料/台灣鄉鎮API查詢條件.txt";
-		String fileTargetPath = "E:/CTBC_workspace_phantom/TestWebServiceClient/src/main/java/_01_測試資料/台灣鄉鎮API查詢結果.txt";
+		
+		String projectDir = System.getProperty("user.dir");
+		
+		String filePath = projectDir + "/src/main/java/_01_測試資料/台灣鄉鎮API查詢條件.txt";
+		String fileTargetPath = projectDir + "/src/main/java/_01_測試資料/台灣鄉鎮API查詢結果.txt";
 		//---------------------------------
 		int threadNum = 5; /* init thread */
 		Thread[] threadArray = getMyThreads(threadNum, filePath, fileTargetPath);
@@ -49,7 +52,7 @@ public class TestThreadReadFileWithWeatherHttpGet {
 	 * 產生台灣鄉鎮API查詢資料文字檔
 	 */
 	public static void generateCityTestData() {
-		File targetFile = new File("E:/CTBC_workspace_phantom/TestWebServiceClient/src/main/java/_01_測試資料/台灣鄉鎮API查詢條件.txt");
+		File targetFile = new File(System.getProperty("user.dir") + "/src/main/java/_01_測試資料/台灣鄉鎮API查詢條件.txt");
 		if (!targetFile.exists()) {
 			try {
 				targetFile.createNewFile();
@@ -77,7 +80,7 @@ public class TestThreadReadFileWithWeatherHttpGet {
 
 	public static String getCityName(int cityId) {
 		try (CloseableHttpClient httpClient = HttpClientBuilder.create().build()) {
-			HttpGet request = new HttpGet(String.format("https://works.ioa.tw/weather/api/cates/%d.json", cityId));
+			HttpGet request = new HttpGet(String.format("http://works.ioa.tw/weather/api/cates/%d.json", cityId));
 
 			request.addHeader("Content-type", "application/json; charset=utf-8");
 			HttpResponse response = httpClient.execute(request);
@@ -111,7 +114,7 @@ public class TestThreadReadFileWithWeatherHttpGet {
 
 	public static List<String> getTaiwanCityTownship(int cityId) {
 		try (CloseableHttpClient httpClient = HttpClientBuilder.create().build()) {
-			HttpGet request = new HttpGet(String.format("https://works.ioa.tw/weather/api/cates/%d.json", cityId));
+			HttpGet request = new HttpGet(String.format("http://works.ioa.tw/weather/api/cates/%d.json", cityId));
 
 			// add request header
 			request.addHeader("Content-type", "application/json; charset=utf-8");
