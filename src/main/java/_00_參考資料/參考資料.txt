@@ -34,3 +34,7 @@ https://www.programering.com/a/MzN1czNwATQ.html
 https://blog.csdn.net/wo541075754/article/details/51564359
 
 
+【多執行緒讀寫檔案】
+https://www.programering.com/a/MzN1czNwATQ.html
+
+

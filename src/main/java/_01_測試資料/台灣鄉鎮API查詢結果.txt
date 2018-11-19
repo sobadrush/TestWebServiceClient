@@ -1,5 +1,0 @@
-pool-1-thread-3 , CityName = === no disqualified city === , CityId = 9 
-pool-1-thread-4 , CityName = === no disqualified city === , CityId = 13 
-pool-1-thread-5 , CityName = === no disqualified city === , CityId = 17 
-pool-1-thread-2 , CityName = === no disqualified city === , CityId = 5 
-pool-1-thread-1 , CityName = === no disqualified city === , CityId = 1 
