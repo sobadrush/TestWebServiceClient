@@ -37,40 +37,47 @@ public class MyThreadQ implements Runnable {
 
 		while (true) {
 			try {
-				
-				Integer cityId = null; 
+
+				Integer cityId = null;
 				String cityName = null;
 				while ((lineStr = br.readLine()) != null) {
-					
-					// ( Step1. read file )
-					synchronized (this.br) { // (※※)拿到 br 的thread才可進來進行IO(鎖在這，IO效能比較好)
-						System.out.println(String.format("%03d , %s , %s", nn++, Thread.currentThread().getName(), lineStr));
-						Thread.sleep(1);
-					} // end-of synchronized
-					
-					// ( Step2. send Request )
-					cityId = Integer.parseInt(lineStr.split(" ")[0]);
-					cityName = lineStr.split(" ")[2];
-					List<String> townsList = getTaiwanCityTownship(cityId);
-					for (String town : townsList) {
-						String townsInfo = Thread.currentThread().getName() + " - " + town + System.lineSeparator();
-						System.out.print(townsInfo);
-					}
-				}
-				
-				// ( Step3. write file )
-				synchronized (this.bw) { // (※※)拿到 br 的thread才可進來進行IO(鎖在這，IO效能比較好)
-					Thread.sleep(10);
-					String cityInfo = String.format("%s , CityName = %s , CityId = %d %s", Thread.currentThread().getName(), cityName, cityId, System.lineSeparator());
-					System.out.println(" >>> cityInfo >>> " + cityInfo);
-					bw.write(">>> " + cityInfo);
-				} // end-of synchronized
 
-			} catch (IOException | InterruptedException e) {
+					// ========== ( Step1. read file ) ==========
+					synchronized (this.br) { // (※※)拿到 br 的thread才可進來進行IO
+						System.out.println(String.format("%03d , %s , %s", nn++, Thread.currentThread().getName(), lineStr));
+						cityId = Integer.parseInt(lineStr.split(" ")[0]);
+						cityName = lineStr.split(" ")[2];
+					} // end-of synchronized
+
+					// ========== ( Step2. send Request ) ==========
+					List<String> townsList = getTaiwanCityTownship(cityId);
+
+					// ========== ( Step3. write file ) ==========
+					synchronized (this.bw) { // (※※)拿到 bw 的thread才可進來進行IO
+						String cityInfo = String.format("%s , CityName = %s , CityId = %d %s", Thread.currentThread().getName(), cityName, cityId, System.lineSeparator());
+						System.out.print(" >>> cityInfo >>> " + cityInfo);
+
+						bw.write(" >>>>>>>>>> cityInfo : " + cityInfo);
+						for (String town : townsList) {
+							String townsInfo = Thread.currentThread().getName() + " - " + town + System.lineSeparator();
+//							System.out.print(townsInfo);
+							bw.write(" >>> townsInfo : " + townsInfo);
+						}
+
+					} // end-of synchronized
+				}
+
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
 
 			if (lineStr == null) {
+//				try {
+//					System.err.println(String.format("@@@ %s , 讀到文件結尾 @@@", Thread.currentThread().getName()));
+//					bw.flush();
+//				} catch (IOException e) {
+//					e.printStackTrace();
+//				}
 				break;
 			}
 
