@@ -37,6 +37,7 @@ public class TestThreadReadFileWithWeatherHttpGet2 {
 		String filePath = projectDir + "/src/main/java/_01_測試資料/台灣鄉鎮API查詢條件.txt";
 		String fileTargetPath = projectDir + "/src/main/java/_01_測試資料/台灣鄉鎮API查詢結果.txt";
 
+		// 清空 台灣鄉鎮API查詢結果.txt
 		try {
 			FileChannel.open(Paths.get(fileTargetPath), StandardOpenOption.WRITE).truncate(0).close();
 		} catch (IOException e) {
@@ -47,7 +48,7 @@ public class TestThreadReadFileWithWeatherHttpGet2 {
 
 		File srcFile = new File(filePath);
 		File targetFile = new File(fileTargetPath);
-		
+
 		if (!targetFile.exists()) {
 			try {
 				targetFile.createNewFile();
@@ -56,25 +57,31 @@ public class TestThreadReadFileWithWeatherHttpGet2 {
 			}
 		}
 
+		BufferedReader br = null;
+		BufferedWriter bw = null;
+		try {
+			br = new BufferedReader(new InputStreamReader(new FileInputStream(srcFile), StandardCharsets.UTF_8));
+			bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(targetFile, true), StandardCharsets.UTF_8));
+		} catch (FileNotFoundException e1) {
+			e1.printStackTrace();
+		}
+		
 		//---------------------------------
-		try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(srcFile), StandardCharsets.UTF_8));
-				BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(targetFile, true), StandardCharsets.UTF_8));) {
+		try {
 			int threadNum = 5; /* init thread */
 			Thread[] threadArray = getMyThreads(threadNum, br, bw);
 			ExecutorService es = createExecutorService(threadArray, 5 /* max thread */);
 
 			boolean isFinshed = false;
-			while (!(isFinshed = es.awaitTermination(1, TimeUnit.SECONDS))) { // 每隔2秒檢查Thread-Pool是否關閉
+			while (!(isFinshed = es.awaitTermination(1, TimeUnit.SECONDS))) { // 每隔1秒檢查Thread-Pool是否關閉
 				System.out.println("======= Thread-Pool尚未關閉 =======");
 			}
-
+			
 			if (isFinshed == true) {
 				System.out.println(" Finshed >>> Thread-Pool已關閉！");
 				bw.close();
 				br.close();
 			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
@@ -158,7 +165,7 @@ public class TestThreadReadFileWithWeatherHttpGet2 {
 	public static Thread[] getMyThreads(int numOfThread, BufferedReader br, BufferedWriter bw) {
 		Thread[] threadArr = new Thread[numOfThread];
 		for (int n = 1 ; n <= numOfThread ; n++) {
-			Thread th = new Thread(new MyThreadQ(br, bw));
+			Thread th = new Thread(new MyThreadQQ(br, bw));// 自訂的Runnable類
 			threadArr[n - 1] = th;
 		}
 		return threadArr;

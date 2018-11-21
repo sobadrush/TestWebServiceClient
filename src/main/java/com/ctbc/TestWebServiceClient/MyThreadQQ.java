@@ -14,18 +14,18 @@ import org.apache.http.impl.client.HttpClientBuilder;
 
 import com.alibaba.fastjson.JSONObject;
 
-public class MyThreadQ implements Runnable {
+public class MyThreadQQ implements Runnable {
 
 	private static int nn = 1;
 
 	private BufferedReader br = null;
 	private BufferedWriter bw = null;
 
-	public MyThreadQ() {
+	public MyThreadQQ() {
 
 	}
 
-	public MyThreadQ(BufferedReader br, BufferedWriter bw) {
+	public MyThreadQQ(BufferedReader br, BufferedWriter bw) {
 		this.br = br;
 		this.bw = bw;
 	}
@@ -35,7 +35,7 @@ public class MyThreadQ implements Runnable {
 
 		String lineStr = null;
 
-		while (true) {
+//		while (true) {
 			try {
 
 				Integer cityId = null;
@@ -44,17 +44,17 @@ public class MyThreadQ implements Runnable {
 				while ((lineStr = br.readLine()) != null) {
 
 					// ========== ( Step1. (1)Read file (2)Parseing text ) ==========
-					synchronized (this.br) { // (※※)拿到 br 的thread才可進來進行IO
+//					synchronized (this.br) { // (※※)拿到 br 的thread才可進來進行IO
 						System.out.println(String.format("%03d , %s , %s", nn++, Thread.currentThread().getName(), lineStr));
 						cityId = Integer.parseInt(lineStr.split(" ")[0]);
 						cityName = lineStr.split(" ")[2];
-					} // end-of synchronized
+//					} // end-of synchronized
 
 					// ========== ( Step2. send Request ) ==========
 					List<String> townsList = getTaiwanCityTownship(cityId);
 
 					// ========== ( Step3. write file ) ==========
-					synchronized (this.bw) { // (※※)拿到 bw 的thread才可進來進行IO
+//					synchronized (this.bw) { // (※※)拿到 bw 的thread才可進來進行IO
 						String cityInfo = String.format("%s , CityName = %s , CityId = %d %s", Thread.currentThread().getName(), cityName, cityId, System.lineSeparator());
 						System.out.print(" >>> cityInfo >>> " + cityInfo);
 
@@ -65,24 +65,24 @@ public class MyThreadQ implements Runnable {
 							bw.write(" >>> townsInfo : " + townsInfo);
 						}
 
-					} // end-of synchronized
+//					} // end-of synchronized
 				}
 
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 
-			if (lineStr == null) {
-//				try {
-//					System.err.println(String.format("@@@ %s , 讀到文件結尾 @@@", Thread.currentThread().getName()));
-//					bw.flush();
-//				} catch (IOException e) {
-//					e.printStackTrace();
-//				}
-				break;
-			}
+//			if (lineStr == null) {
+////				try {
+////					System.err.println(String.format("@@@ %s , 讀到文件結尾 @@@", Thread.currentThread().getName()));
+////					bw.flush();
+////				} catch (IOException e) {
+////					e.printStackTrace();
+////				}
+//				break;
+//			}
 
-		}
+//		}
 	}
 
 	private static List<String> getTaiwanCityTownship(int cityId) {

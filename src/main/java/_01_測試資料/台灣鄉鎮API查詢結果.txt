@@ -1,3 +1,54 @@
+ >>>>>>>>>> cityInfo : pool-1-thread-3 , CityName = 基隆 , CityId = 2 
+ >>> townsInfo : pool-1-thread-3 -  >>> 仁愛區
+ >>> townsInfo : pool-1-thread-3 -  >>> 信義區
+ >>> townsInfo : pool-1-thread-3 -  >>> 中正區
+ >>> townsInfo : pool-1-thread-3 -  >>> 中山區
+ >>> townsInfo : pool-1-thread-3 -  >>> 安樂區
+ >>> townsInfo : pool-1-thread-3 -  >>> 暖暖區
+ >>>>>>>>>> cityInfo : pool-1-thread-5 , CityName = 宜蘭 , CityId = 5 
+ >>> townsInfo : pool-1-thread-5 -  >>> 宜蘭市
+ >>> townsInfo : pool-1-thread-5 -  >>> 頭城鎮
+ >>> townsInfo : pool-1-thread-5 -  >>> 礁溪鄉
+ >>> townsInfo : pool-1-thread-5 -  >>> 壯圍鄉
+ >>> townsInfo : pool-1-thread-5 -  >>> 員山鄉
+ >>> townsInfo : pool-1-thread-5 -  >>> 羅東鎮
+ >>> townsInfo : pool-1-thread-5 -  >>> 三星鄉
+ >>> townsInfo : pool-1-thread-5 -  >>> 大同鄉
+ >>> townsInfo : pool-1-thread-3 -  >>> 七堵區
+ >>>>>>>>>> cityInfo : pool-1-thread-2 , CityName = 新北 , CityId = 3 
+ >>> townsInfo : pool-1-thread-2 -  >>> 萬里區
+ >>> townsInfo : pool-1-thread-2 -  >>> 金山區
+ >>> townsInfo : pool-1-thread-2 -  >>> 板橋區
+ >>> townsInfo : pool-1-thread-2 -  >>> 汐止區
+ >>> townsInfo : pool-1-thread-2 -  >>> 深坑區
+ >>> townsInfo : pool-1-thread-2 -  >>> 石碇區
+ >>> townsInfo : pool-1-thread-2 -  >>> 瑞芳區
+ >>> townsInfo : pool-1-thread-2 -  >>> 平溪區
+ >>> townsInfo : pool-1-thread-2 -  >>> 雙溪區
+ >>> townsInfo : pool-1-thread-2 -  >>> 貢寮區
+ >>> townsInfo : pool-1-thread-2 -  >>> 新店區
+ >>> townsInfo : pool-1-thread-2 -  >>> 坪林區
+ >>> townsInfo : pool-1-thread-2 -  >>> 烏來區
+ >>> townsInfo : pool-1-thread-2 -  >>> 永和區
+ >>> townsInfo : pool-1-thread-2 -  >>> 中和區
+ >>> townsInfo : pool-1-thread-2 -  >>> 土城區
+ >>> townsInfo : pool-1-thread-2 -  >>> 三峽區
+ >>> townsInfo : pool-1-thread-2 -  >>> 樹林區
+ >>> townsInfo : pool-1-thread-2 -  >>> 鶯歌區
+ >>> townsInfo : pool-1-thread-2 -  >>> 三重區
+ >>> townsInfo : pool-1-thread-2 -  >>> 新莊區
+ >>> townsInfo : pool-1-thread-2 -  >>> 泰山區
+ >>> townsInfo : pool-1-thread-2 -  >>> 林口區
+ >>> townsInfo : pool-1-thread-2 -  >>> 蘆洲區
+ >>> townsInfo : pool-1-thread-2 -  >>> 五股區
+ >>> townsInfo : pool-1-thread-2 -  >>> 八里區
+ >>> townsInfo : pool-1-thread-2 -  >>> 淡水區
+ >>> townsInfo : pool-1-thread-2 -  >>> 三芝區
+ >>> townsInfo : pool-1-thread-2 -  >>> 石門區
+ >>> townsInfo : pool-1-thread-5 -  >>> 五結鄉
+ >>> townsInfo : pool-1-thread-5 -  >>> 冬山鄉
+ >>> townsInfo : pool-1-thread-5 -  >>> 蘇澳鎮
+ >>> townsInfo : pool-1-thread-5 -  >>> 南澳鄉
  >>>>>>>>>> cityInfo : pool-1-thread-1 , CityName = 台北 , CityId = 1 
  >>> townsInfo : pool-1-thread-1 -  >>> 中正區
  >>> townsInfo : pool-1-thread-1 -  >>> 大同區
@@ -11,80 +62,30 @@
  >>> townsInfo : pool-1-thread-1 -  >>> 內湖區
  >>> townsInfo : pool-1-thread-1 -  >>> 南港區
  >>> townsInfo : pool-1-thread-1 -  >>> 文山區
- >>>>>>>>>> cityInfo : pool-1-thread-2 , CityName = 基隆 , CityId = 2 
- >>> townsInfo : pool-1-thread-2 -  >>> 仁愛區
- >>> townsInfo : pool-1-thread-2 -  >>> 信義區
- >>> townsInfo : pool-1-thread-2 -  >>> 中正區
- >>> townsInfo : pool-1-thread-2 -  >>> 中山區
- >>> townsInfo : pool-1-thread-2 -  >>> 安樂區
- >>> townsInfo : pool-1-thread-2 -  >>> 暖暖區
- >>> townsInfo : pool-1-thread-2 -  >>> 七堵區
- >>>>>>>>>> cityInfo : pool-1-thread-3 , CityName = 新北 , CityId = 3 
- >>> townsInfo : pool-1-thread-3 -  >>> 萬里區
- >>> townsInfo : pool-1-thread-3 -  >>> 金山區
- >>> townsInfo : pool-1-thread-3 -  >>> 板橋區
- >>> townsInfo : pool-1-thread-3 -  >>> 汐止區
- >>> townsInfo : pool-1-thread-3 -  >>> 深坑區
- >>> townsInfo : pool-1-thread-3 -  >>> 石碇區
- >>> townsInfo : pool-1-thread-3 -  >>> 瑞芳區
- >>> townsInfo : pool-1-thread-3 -  >>> 平溪區
- >>> townsInfo : pool-1-thread-3 -  >>> 雙溪區
- >>> townsInfo : pool-1-thread-3 -  >>> 貢寮區
- >>> townsInfo : pool-1-thread-3 -  >>> 新店區
- >>> townsInfo : pool-1-thread-3 -  >>> 坪林區
- >>> townsInfo : pool-1-thread-3 -  >>> 烏來區
- >>> townsInfo : pool-1-thread-3 -  >>> 永和區
- >>> townsInfo : pool-1-thread-3 -  >>> 中和區
- >>> townsInfo : pool-1-thread-3 -  >>> 土城區
- >>> townsInfo : pool-1-thread-3 -  >>> 三峽區
- >>> townsInfo : pool-1-thread-3 -  >>> 樹林區
- >>> townsInfo : pool-1-thread-3 -  >>> 鶯歌區
- >>> townsInfo : pool-1-thread-3 -  >>> 三重區
- >>> townsInfo : pool-1-thread-3 -  >>> 新莊區
- >>> townsInfo : pool-1-thread-3 -  >>> 泰山區
- >>> townsInfo : pool-1-thread-3 -  >>> 林口區
- >>> townsInfo : pool-1-thread-3 -  >>> 蘆洲區
- >>> townsInfo : pool-1-thread-3 -  >>> 五股區
- >>> townsInfo : pool-1-thread-3 -  >>> 八里區
- >>> townsInfo : pool-1-thread-3 -  >>> 淡水區
- >>> townsInfo : pool-1-thread-3 -  >>> 三芝區
- >>> townsInfo : pool-1-thread-3 -  >>> 石門區
- >>>>>>>>>> cityInfo : pool-1-thread-5 , CityName = 宜蘭 , CityId = 5 
- >>> townsInfo : pool-1-thread-5 -  >>> 宜蘭市
- >>> townsInfo : pool-1-thread-5 -  >>> 頭城鎮
- >>> townsInfo : pool-1-thread-5 -  >>> 礁溪鄉
- >>> townsInfo : pool-1-thread-5 -  >>> 壯圍鄉
- >>> townsInfo : pool-1-thread-5 -  >>> 員山鄉
- >>> townsInfo : pool-1-thread-5 -  >>> 羅東鎮
- >>> townsInfo : pool-1-thread-5 -  >>> 三星鄉
- >>> townsInfo : pool-1-thread-5 -  >>> 大同鄉
- >>> townsInfo : pool-1-thread-5 -  >>> 五結鄉
- >>> townsInfo : pool-1-thread-5 -  >>> 冬山鄉
- >>> townsInfo : pool-1-thread-5 -  >>> 蘇澳鎮
- >>> townsInfo : pool-1-thread-5 -  >>> 南澳鄉
  >>>>>>>>>> cityInfo : pool-1-thread-4 , CityName = 連江 , CityId = 4 
  >>> townsInfo : pool-1-thread-4 -  >>> 南竿鄉
  >>> townsInfo : pool-1-thread-4 -  >>> 北竿鄉
  >>> townsInfo : pool-1-thread-4 -  >>> 莒光鄉
  >>> townsInfo : pool-1-thread-4 -  >>> 東引鄉
- >>>>>>>>>> cityInfo : pool-1-thread-2 , CityName = 新竹 , CityId = 7 
- >>> townsInfo : pool-1-thread-2 -  >>> 竹北市
- >>> townsInfo : pool-1-thread-2 -  >>> 湖口鄉
- >>> townsInfo : pool-1-thread-2 -  >>> 新豐鄉
- >>> townsInfo : pool-1-thread-2 -  >>> 新埔鎮
- >>> townsInfo : pool-1-thread-2 -  >>> 關西鎮
- >>> townsInfo : pool-1-thread-2 -  >>> 芎林鄉
- >>> townsInfo : pool-1-thread-2 -  >>> 寶山鄉
- >>> townsInfo : pool-1-thread-2 -  >>> 竹東鎮
- >>> townsInfo : pool-1-thread-2 -  >>> 五峰鄉
- >>> townsInfo : pool-1-thread-2 -  >>> 橫山鄉
- >>> townsInfo : pool-1-thread-2 -  >>> 尖石鄉
- >>> townsInfo : pool-1-thread-2 -  >>> 北埔鄉
- >>> townsInfo : pool-1-thread-2 -  >>> 峨眉鄉
- >>>>>>>>>> cityInfo : pool-1-thread-1 , CityName = 新竹 , CityId = 6 
- >>> townsInfo : pool-1-thread-1 -  >>> 東區
- >>> townsInfo : pool-1-thread-1 -  >>> 香山區
- >>> townsInfo : pool-1-thread-1 -  >>> 北區
+ >>>>>>>>>> cityInfo : pool-1-thread-1 , CityName = 苗栗 , CityId = 9 
+ >>> townsInfo : pool-1-thread-1 -  >>> 竹南鎮
+ >>> townsInfo : pool-1-thread-1 -  >>> 頭份鎮
+ >>> townsInfo : pool-1-thread-1 -  >>> 三灣鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 南庄鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 獅潭鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 後龍鎮
+ >>> townsInfo : pool-1-thread-1 -  >>> 通霄鎮
+ >>> townsInfo : pool-1-thread-1 -  >>> 苑裡鎮
+ >>> townsInfo : pool-1-thread-1 -  >>> 苗栗市
+ >>> townsInfo : pool-1-thread-1 -  >>> 造橋鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 頭屋鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 公館鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 大湖鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 泰安鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 銅鑼鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 三義鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 西湖鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 卓蘭鎮
  >>>>>>>>>> cityInfo : pool-1-thread-4 , CityName = 台中 , CityId = 10 
  >>> townsInfo : pool-1-thread-4 -  >>> 中區
  >>> townsInfo : pool-1-thread-4 -  >>> 東區
@@ -115,179 +116,55 @@
  >>> townsInfo : pool-1-thread-4 -  >>> 大甲區
  >>> townsInfo : pool-1-thread-4 -  >>> 外埔區
  >>> townsInfo : pool-1-thread-4 -  >>> 大安區
- >>>>>>>>>> cityInfo : pool-1-thread-3 , CityName = 桃園 , CityId = 8 
- >>> townsInfo : pool-1-thread-3 -  >>> 中壢區
- >>> townsInfo : pool-1-thread-3 -  >>> 平鎮區
- >>> townsInfo : pool-1-thread-3 -  >>> 龍潭區
- >>> townsInfo : pool-1-thread-3 -  >>> 楊梅區
- >>> townsInfo : pool-1-thread-3 -  >>> 新屋區
- >>> townsInfo : pool-1-thread-3 -  >>> 觀音區
- >>> townsInfo : pool-1-thread-3 -  >>> 桃園區
- >>> townsInfo : pool-1-thread-3 -  >>> 龜山區
- >>> townsInfo : pool-1-thread-3 -  >>> 八德區
- >>> townsInfo : pool-1-thread-3 -  >>> 大溪區
- >>> townsInfo : pool-1-thread-3 -  >>> 復興區
- >>> townsInfo : pool-1-thread-3 -  >>> 大園區
- >>> townsInfo : pool-1-thread-3 -  >>> 蘆竹區
- >>>>>>>>>> cityInfo : pool-1-thread-5 , CityName = 苗栗 , CityId = 9 
- >>> townsInfo : pool-1-thread-5 -  >>> 竹南鎮
- >>> townsInfo : pool-1-thread-5 -  >>> 頭份鎮
- >>> townsInfo : pool-1-thread-5 -  >>> 三灣鄉
- >>> townsInfo : pool-1-thread-5 -  >>> 南庄鄉
- >>> townsInfo : pool-1-thread-5 -  >>> 獅潭鄉
- >>> townsInfo : pool-1-thread-5 -  >>> 後龍鎮
- >>> townsInfo : pool-1-thread-5 -  >>> 通霄鎮
- >>> townsInfo : pool-1-thread-5 -  >>> 苑裡鎮
- >>> townsInfo : pool-1-thread-5 -  >>> 苗栗市
- >>> townsInfo : pool-1-thread-5 -  >>> 造橋鄉
- >>> townsInfo : pool-1-thread-5 -  >>> 頭屋鄉
- >>> townsInfo : pool-1-thread-5 -  >>> 公館鄉
- >>> townsInfo : pool-1-thread-5 -  >>> 大湖鄉
- >>> townsInfo : pool-1-thread-5 -  >>> 泰安鄉
- >>> townsInfo : pool-1-thread-5 -  >>> 銅鑼鄉
- >>> townsInfo : pool-1-thread-5 -  >>> 三義鄉
- >>> townsInfo : pool-1-thread-5 -  >>> 西湖鄉
- >>> townsInfo : pool-1-thread-5 -  >>> 卓蘭鎮
- >>>>>>>>>> cityInfo : pool-1-thread-2 , CityName = 彰化 , CityId = 11 
- >>> townsInfo : pool-1-thread-2 -  >>> 彰化市
- >>> townsInfo : pool-1-thread-2 -  >>> 芬園鄉
- >>> townsInfo : pool-1-thread-2 -  >>> 花壇鄉
- >>> townsInfo : pool-1-thread-2 -  >>> 秀水鄉
- >>> townsInfo : pool-1-thread-2 -  >>> 鹿港鎮
- >>> townsInfo : pool-1-thread-2 -  >>> 福興鄉
- >>> townsInfo : pool-1-thread-2 -  >>> 線西鄉
- >>> townsInfo : pool-1-thread-2 -  >>> 和美鎮
- >>> townsInfo : pool-1-thread-2 -  >>> 伸港鄉
- >>> townsInfo : pool-1-thread-2 -  >>> 員林鎮
- >>> townsInfo : pool-1-thread-2 -  >>> 社頭鄉
- >>> townsInfo : pool-1-thread-2 -  >>> 永靖鄉
- >>> townsInfo : pool-1-thread-2 -  >>> 埔心鄉
- >>> townsInfo : pool-1-thread-2 -  >>> 溪湖鎮
- >>> townsInfo : pool-1-thread-2 -  >>> 大村鄉
- >>> townsInfo : pool-1-thread-2 -  >>> 埔鹽鄉
- >>> townsInfo : pool-1-thread-2 -  >>> 田中鎮
- >>> townsInfo : pool-1-thread-2 -  >>> 北斗鎮
- >>> townsInfo : pool-1-thread-2 -  >>> 田尾鄉
- >>> townsInfo : pool-1-thread-2 -  >>> 埤頭鄉
- >>> townsInfo : pool-1-thread-2 -  >>> 溪州鄉
- >>> townsInfo : pool-1-thread-2 -  >>> 竹塘鄉
- >>> townsInfo : pool-1-thread-2 -  >>> 二林鎮
- >>> townsInfo : pool-1-thread-2 -  >>> 大城鄉
- >>> townsInfo : pool-1-thread-2 -  >>> 芳苑鄉
- >>> townsInfo : pool-1-thread-2 -  >>> 二水鄉
- >>>>>>>>>> cityInfo : pool-1-thread-1 , CityName = 南投 , CityId = 12 
- >>> townsInfo : pool-1-thread-1 -  >>> 南投市
- >>> townsInfo : pool-1-thread-1 -  >>> 中寮鄉
- >>> townsInfo : pool-1-thread-1 -  >>> 草屯鎮
- >>> townsInfo : pool-1-thread-1 -  >>> 國姓鄉
- >>> townsInfo : pool-1-thread-1 -  >>> 埔里鎮
- >>> townsInfo : pool-1-thread-1 -  >>> 仁愛鄉
- >>> townsInfo : pool-1-thread-1 -  >>> 名間鄉
- >>> townsInfo : pool-1-thread-1 -  >>> 集集鎮
- >>> townsInfo : pool-1-thread-1 -  >>> 水里鄉
- >>> townsInfo : pool-1-thread-1 -  >>> 魚池鄉
- >>> townsInfo : pool-1-thread-1 -  >>> 信義鄉
- >>> townsInfo : pool-1-thread-1 -  >>> 竹山鎮
- >>> townsInfo : pool-1-thread-1 -  >>> 鹿谷鄉
- >>>>>>>>>> cityInfo : pool-1-thread-3 , CityName = 嘉義 , CityId = 14 
- >>> townsInfo : pool-1-thread-3 -  >>> 番路鄉
- >>> townsInfo : pool-1-thread-3 -  >>> 梅山鄉
- >>> townsInfo : pool-1-thread-3 -  >>> 竹崎鄉
- >>> townsInfo : pool-1-thread-3 -  >>> 阿里山鄉
- >>> townsInfo : pool-1-thread-3 -  >>> 中埔鄉
- >>> townsInfo : pool-1-thread-3 -  >>> 大埔鄉
- >>> townsInfo : pool-1-thread-3 -  >>> 水上鄉
- >>> townsInfo : pool-1-thread-3 -  >>> 鹿草鄉
- >>> townsInfo : pool-1-thread-3 -  >>> 太保市
- >>> townsInfo : pool-1-thread-3 -  >>> 朴子市
- >>> townsInfo : pool-1-thread-3 -  >>> 東石鄉
- >>> townsInfo : pool-1-thread-3 -  >>> 六腳鄉
- >>> townsInfo : pool-1-thread-3 -  >>> 新港鄉
- >>> townsInfo : pool-1-thread-3 -  >>> 民雄鄉
- >>> townsInfo : pool-1-thread-3 -  >>> 大林鎮
- >>> townsInfo : pool-1-thread-3 -  >>> 溪口鄉
- >>> townsInfo : pool-1-thread-3 -  >>> 義竹鄉
- >>> townsInfo : pool-1-thread-3 -  >>> 布袋鎮
- >>>>>>>>>> cityInfo : pool-1-thread-4 , CityName = 嘉義 , CityId = 13 
- >>> townsInfo : pool-1-thread-4 -  >>> 西區
- >>> townsInfo : pool-1-thread-4 -  >>> 東區
- >>>>>>>>>> cityInfo : pool-1-thread-2 , CityName = 台南 , CityId = 16 
- >>> townsInfo : pool-1-thread-2 -  >>> 中西區
- >>> townsInfo : pool-1-thread-2 -  >>> 東區
- >>> townsInfo : pool-1-thread-2 -  >>> 南區
- >>> townsInfo : pool-1-thread-2 -  >>> 北區
- >>> townsInfo : pool-1-thread-2 -  >>> 安平區
- >>> townsInfo : pool-1-thread-2 -  >>> 安南區
- >>> townsInfo : pool-1-thread-2 -  >>> 永康區
- >>> townsInfo : pool-1-thread-2 -  >>> 歸仁區
- >>> townsInfo : pool-1-thread-2 -  >>> 新化區
- >>> townsInfo : pool-1-thread-2 -  >>> 左鎮區
- >>> townsInfo : pool-1-thread-2 -  >>> 玉井區
- >>> townsInfo : pool-1-thread-2 -  >>> 楠西區
- >>> townsInfo : pool-1-thread-2 -  >>> 南化區
- >>> townsInfo : pool-1-thread-2 -  >>> 仁德區
- >>> townsInfo : pool-1-thread-2 -  >>> 關廟區
- >>> townsInfo : pool-1-thread-2 -  >>> 龍崎區
- >>> townsInfo : pool-1-thread-2 -  >>> 官田區
- >>> townsInfo : pool-1-thread-2 -  >>> 麻豆區
- >>> townsInfo : pool-1-thread-2 -  >>> 佳里區
- >>> townsInfo : pool-1-thread-2 -  >>> 西港區
- >>> townsInfo : pool-1-thread-2 -  >>> 七股區
- >>> townsInfo : pool-1-thread-2 -  >>> 將軍區
- >>> townsInfo : pool-1-thread-2 -  >>> 學甲區
- >>> townsInfo : pool-1-thread-2 -  >>> 北門區
- >>> townsInfo : pool-1-thread-2 -  >>> 新營區
- >>> townsInfo : pool-1-thread-2 -  >>> 後壁區
- >>> townsInfo : pool-1-thread-2 -  >>> 白河區
- >>> townsInfo : pool-1-thread-2 -  >>> 東山區
- >>> townsInfo : pool-1-thread-2 -  >>> 六甲區
- >>> townsInfo : pool-1-thread-2 -  >>> 下營區
- >>> townsInfo : pool-1-thread-2 -  >>> 柳營區
- >>> townsInfo : pool-1-thread-2 -  >>> 鹽水區
- >>> townsInfo : pool-1-thread-2 -  >>> 善化區
- >>> townsInfo : pool-1-thread-2 -  >>> 大內區
- >>> townsInfo : pool-1-thread-2 -  >>> 山上區
- >>> townsInfo : pool-1-thread-2 -  >>> 新市區
- >>> townsInfo : pool-1-thread-2 -  >>> 安定區
- >>>>>>>>>> cityInfo : pool-1-thread-1 , CityName = 高雄 , CityId = 17 
- >>> townsInfo : pool-1-thread-1 -  >>> 新興區
- >>> townsInfo : pool-1-thread-1 -  >>> 前金區
- >>> townsInfo : pool-1-thread-1 -  >>> 苓雅區
- >>> townsInfo : pool-1-thread-1 -  >>> 鹽埕區
- >>> townsInfo : pool-1-thread-1 -  >>> 鼓山區
- >>> townsInfo : pool-1-thread-1 -  >>> 旗津區
- >>> townsInfo : pool-1-thread-1 -  >>> 前鎮區
- >>> townsInfo : pool-1-thread-1 -  >>> 三民區
- >>> townsInfo : pool-1-thread-1 -  >>> 楠梓區
- >>> townsInfo : pool-1-thread-1 -  >>> 小港區
- >>> townsInfo : pool-1-thread-1 -  >>> 左營區
- >>> townsInfo : pool-1-thread-1 -  >>> 仁武區
- >>> townsInfo : pool-1-thread-1 -  >>> 大社區
- >>> townsInfo : pool-1-thread-1 -  >>> 岡山區
- >>> townsInfo : pool-1-thread-1 -  >>> 路竹區
- >>> townsInfo : pool-1-thread-1 -  >>> 阿蓮區
- >>> townsInfo : pool-1-thread-1 -  >>> 田寮區
- >>> townsInfo : pool-1-thread-1 -  >>> 燕巢區
- >>> townsInfo : pool-1-thread-1 -  >>> 橋頭區
- >>> townsInfo : pool-1-thread-1 -  >>> 梓官區
- >>> townsInfo : pool-1-thread-1 -  >>> 彌陀區
- >>> townsInfo : pool-1-thread-1 -  >>> 永安區
- >>> townsInfo : pool-1-thread-1 -  >>> 湖內區
- >>> townsInfo : pool-1-thread-1 -  >>> 鳳山區
- >>> townsInfo : pool-1-thread-1 -  >>> 大寮區
- >>> townsInfo : pool-1-thread-1 -  >>> 林園區
- >>> townsInfo : pool-1-thread-1 -  >>> 鳥松區
- >>> townsInfo : pool-1-thread-1 -  >>> 大樹區
- >>> townsInfo : pool-1-thread-1 -  >>> 旗山區
- >>> townsInfo : pool-1-thread-1 -  >>> 美濃區
- >>> townsInfo : pool-1-thread-1 -  >>> 六龜區
- >>> townsInfo : pool-1-thread-1 -  >>> 內門區
- >>> townsInfo : pool-1-thread-1 -  >>> 杉林區
- >>> townsInfo : pool-1-thread-1 -  >>> 甲仙區
- >>> townsInfo : pool-1-thread-1 -  >>> 桃源區
- >>> townsInfo : pool-1-thread-1 -  >>> 那瑪夏區
- >>> townsInfo : pool-1-thread-1 -  >>> 茂林區
- >>> townsInfo : pool-1-thread-1 -  >>> 茄萣區
+ >>>>>>>>>> cityInfo : pool-1-thread-3 , CityName = 新竹 , CityId = 6 
+ >>> townsInfo : pool-1-thread-3 -  >>> 東區
+ >>> townsInfo : pool-1-thread-3 -  >>> 香山區
+ >>> townsInfo : pool-1-thread-3 -  >>> 北區
+ >>>>>>>>>> cityInfo : pool-1-thread-2 , CityName = 新竹 , CityId = 7 
+ >>> townsInfo : pool-1-thread-2 -  >>> 竹北市
+ >>> townsInfo : pool-1-thread-2 -  >>> 湖口鄉
+ >>> townsInfo : pool-1-thread-2 -  >>> 新豐鄉
+ >>> townsInfo : pool-1-thread-2 -  >>> 新埔鎮
+ >>> townsInfo : pool-1-thread-2 -  >>> 關西鎮
+ >>> townsInfo : pool-1-thread-2 -  >>> 芎林鄉
+ >>> townsInfo : pool-1-thread-2 -  >>> 寶山鄉
+ >>> townsInfo : pool-1-thread-2 -  >>> 竹東鎮
+ >>> townsInfo : pool-1-thread-2 -  >>> 五峰鄉
+ >>> townsInfo : pool-1-thread-2 -  >>> 橫山鄉
+ >>> townsInfo : pool-1-thread-2 -  >>> 尖石鄉
+ >>> townsInfo : pool-1-thread-2 -  >>> 北埔鄉
+ >>> townsInfo : pool-1-thread-2 -  >>> 峨眉鄉
+ >>>>>>>>>> cityInfo : pool-1-thread-5 , CityName = 桃園 , CityId = 8 
+ >>> townsInfo : pool-1-thread-5 -  >>> 中壢區
+ >>> townsInfo : pool-1-thread-5 -  >>> 平鎮區
+ >>> townsInfo : pool-1-thread-5 -  >>> 龍潭區
+ >>> townsInfo : pool-1-thread-5 -  >>> 楊梅區
+ >>> townsInfo : pool-1-thread-5 -  >>> 新屋區
+ >>> townsInfo : pool-1-thread-5 -  >>> 觀音區
+ >>> townsInfo : pool-1-thread-5 -  >>> 桃園區
+ >>> townsInfo : pool-1-thread-5 -  >>> 龜山區
+ >>> townsInfo : pool-1-thread-5 -  >>> 八德區
+ >>> townsInfo : pool-1-thread-5 -  >>> 大溪區
+ >>> townsInfo : pool-1-thread-5 -  >>> 復興區
+ >>> townsInfo : pool-1-thread-5 -  >>> 大園區
+ >>> townsInfo : pool-1-thread-5 -  >>> 蘆竹區
+ >>>>>>>>>> cityInfo : pool-1-thread-3 , CityName = 嘉義 , CityId = 13 
+ >>> townsInfo : pool-1-thread-3 -  >>> 西區
+ >>> townsInfo : pool-1-thread-3 -  >>> 東區
+ >>>>>>>>>> cityInfo : pool-1-thread-4 , CityName = 南投 , CityId = 12 
+ >>> townsInfo : pool-1-thread-4 -  >>> 南投市
+ >>> townsInfo : pool-1-thread-4 -  >>> 中寮鄉
+ >>> townsInfo : pool-1-thread-4 -  >>> 草屯鎮
+ >>> townsInfo : pool-1-thread-4 -  >>> 國姓鄉
+ >>> townsInfo : pool-1-thread-4 -  >>> 埔里鎮
+ >>> townsInfo : pool-1-thread-4 -  >>> 仁愛鄉
+ >>> townsInfo : pool-1-thread-4 -  >>> 名間鄉
+ >>> townsInfo : pool-1-thread-4 -  >>> 集集鎮
+ >>> townsInfo : pool-1-thread-4 -  >>> 水里鄉
+ >>> townsInfo : pool-1-thread-4 -  >>> 魚池鄉
+ >>> townsInfo : pool-1-thread-4 -  >>> 信義鄉
+ >>> townsInfo : pool-1-thread-4 -  >>> 竹山鎮
+ >>> townsInfo : pool-1-thread-4 -  >>> 鹿谷鄉
  >>>>>>>>>> cityInfo : pool-1-thread-5 , CityName = 雲林 , CityId = 15 
  >>> townsInfo : pool-1-thread-5 -  >>> 斗南鎮
  >>> townsInfo : pool-1-thread-5 -  >>> 大埤鄉
@@ -309,13 +186,97 @@
  >>> townsInfo : pool-1-thread-5 -  >>> 口湖鄉
  >>> townsInfo : pool-1-thread-5 -  >>> 四湖鄉
  >>> townsInfo : pool-1-thread-5 -  >>> 元長鄉
- >>>>>>>>>> cityInfo : pool-1-thread-3 , CityName = 澎湖 , CityId = 18 
- >>> townsInfo : pool-1-thread-3 -  >>> 馬公市
- >>> townsInfo : pool-1-thread-3 -  >>> 西嶼鄉
- >>> townsInfo : pool-1-thread-3 -  >>> 望安鄉
- >>> townsInfo : pool-1-thread-3 -  >>> 七美鄉
- >>> townsInfo : pool-1-thread-3 -  >>> 白沙鄉
- >>> townsInfo : pool-1-thread-3 -  >>> 湖西鄉
+ >>>>>>>>>> cityInfo : pool-1-thread-1 , CityName = 彰化 , CityId = 11 
+ >>> townsInfo : pool-1-thread-1 -  >>> 彰化市
+ >>> townsInfo : pool-1-thread-1 -  >>> 芬園鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 花壇鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 秀水鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 鹿港鎮
+ >>> townsInfo : pool-1-thread-1 -  >>> 福興鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 線西鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 和美鎮
+ >>> townsInfo : pool-1-thread-1 -  >>> 伸港鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 員林鎮
+ >>> townsInfo : pool-1-thread-1 -  >>> 社頭鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 永靖鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 埔心鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 溪湖鎮
+ >>> townsInfo : pool-1-thread-1 -  >>> 大村鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 埔鹽鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 田中鎮
+ >>> townsInfo : pool-1-thread-1 -  >>> 北斗鎮
+ >>> townsInfo : pool-1-thread-1 -  >>> 田尾鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 埤頭鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 溪州鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 竹塘鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 二林鎮
+ >>> townsInfo : pool-1-thread-1 -  >>> 大城鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 芳苑鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 二水鄉
+ >>>>>>>>>> cityInfo : pool-1-thread-2 , CityName = 嘉義 , CityId = 14 
+ >>> townsInfo : pool-1-thread-2 -  >>> 番路鄉
+ >>> townsInfo : pool-1-thread-2 -  >>> 梅山鄉
+ >>> townsInfo : pool-1-thread-2 -  >>> 竹崎鄉
+ >>> townsInfo : pool-1-thread-2 -  >>> 阿里山鄉
+ >>> townsInfo : pool-1-thread-2 -  >>> 中埔鄉
+ >>> townsInfo : pool-1-thread-2 -  >>> 大埔鄉
+ >>> townsInfo : pool-1-thread-2 -  >>> 水上鄉
+ >>> townsInfo : pool-1-thread-2 -  >>> 鹿草鄉
+ >>> townsInfo : pool-1-thread-2 -  >>> 太保市
+ >>> townsInfo : pool-1-thread-2 -  >>> 朴子市
+ >>> townsInfo : pool-1-thread-2 -  >>> 東石鄉
+ >>> townsInfo : pool-1-thread-2 -  >>> 六腳鄉
+ >>> townsInfo : pool-1-thread-2 -  >>> 新港鄉
+ >>> townsInfo : pool-1-thread-2 -  >>> 民雄鄉
+ >>> townsInfo : pool-1-thread-2 -  >>> 大林鎮
+ >>> townsInfo : pool-1-thread-2 -  >>> 溪口鄉
+ >>> townsInfo : pool-1-thread-2 -  >>> 義竹鄉
+ >>> townsInfo : pool-1-thread-2 -  >>> 布袋鎮
+ >>>>>>>>>> cityInfo : pool-1-thread-3 , CityName = 台南 , CityId = 16 
+ >>> townsInfo : pool-1-thread-3 -  >>> 中西區
+ >>> townsInfo : pool-1-thread-3 -  >>> 東區
+ >>> townsInfo : pool-1-thread-3 -  >>> 南區
+ >>> townsInfo : pool-1-thread-3 -  >>> 北區
+ >>> townsInfo : pool-1-thread-3 -  >>> 安平區
+ >>> townsInfo : pool-1-thread-3 -  >>> 安南區
+ >>> townsInfo : pool-1-thread-3 -  >>> 永康區
+ >>> townsInfo : pool-1-thread-3 -  >>> 歸仁區
+ >>> townsInfo : pool-1-thread-3 -  >>> 新化區
+ >>> townsInfo : pool-1-thread-3 -  >>> 左鎮區
+ >>> townsInfo : pool-1-thread-3 -  >>> 玉井區
+ >>> townsInfo : pool-1-thread-3 -  >>> 楠西區
+ >>> townsInfo : pool-1-thread-3 -  >>> 南化區
+ >>> townsInfo : pool-1-thread-3 -  >>> 仁德區
+ >>> townsInfo : pool-1-thread-3 -  >>> 關廟區
+ >>> townsInfo : pool-1-thread-3 -  >>> 龍崎區
+ >>> townsInfo : pool-1-thread-3 -  >>> 官田區
+ >>> townsInfo : pool-1-thread-3 -  >>> 麻豆區
+ >>> townsInfo : pool-1-thread-3 -  >>> 佳里區
+ >>> townsInfo : pool-1-thread-3 -  >>> 西港區
+ >>> townsInfo : pool-1-thread-3 -  >>> 七股區
+ >>> townsInfo : pool-1-thread-3 -  >>> 將軍區
+ >>> townsInfo : pool-1-thread-3 -  >>> 學甲區
+ >>> townsInfo : pool-1-thread-3 -  >>> 北門區
+ >>> townsInfo : pool-1-thread-3 -  >>> 新營區
+ >>> townsInfo : pool-1-thread-3 -  >>> 後壁區
+ >>> townsInfo : pool-1-thread-3 -  >>> 白河區
+ >>> townsInfo : pool-1-thread-3 -  >>> 東山區
+ >>> townsInfo : pool-1-thread-3 -  >>> 六甲區
+ >>> townsInfo : pool-1-thread-3 -  >>> 下營區
+ >>> townsInfo : pool-1-thread-3 -  >>> 柳營區
+ >>> townsInfo : pool-1-thread-3 -  >>> 鹽水區
+ >>> townsInfo : pool-1-thread-3 -  >>> 善化區
+ >>> townsInfo : pool-1-thread-3 -  >>> 大內區
+ >>> townsInfo : pool-1-thread-3 -  >>> 山上區
+ >>> townsInfo : pool-1-thread-3 -  >>> 新市區
+ >>> townsInfo : pool-1-thread-3 -  >>> 安定區
+ >>>>>>>>>> cityInfo : pool-1-thread-1 , CityName = 金門 , CityId = 19 
+ >>> townsInfo : pool-1-thread-1 -  >>> 金沙鎮
+ >>> townsInfo : pool-1-thread-1 -  >>> 金湖鎮
+ >>> townsInfo : pool-1-thread-1 -  >>> 金寧鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 金城鎮
+ >>> townsInfo : pool-1-thread-1 -  >>> 烈嶼鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 烏坵鄉
  >>>>>>>>>> cityInfo : pool-1-thread-2 , CityName = 屏東 , CityId = 20 
  >>> townsInfo : pool-1-thread-2 -  >>> 屏東市
  >>> townsInfo : pool-1-thread-2 -  >>> 三地門鄉
@@ -350,41 +311,80 @@
  >>> townsInfo : pool-1-thread-2 -  >>> 牡丹鄉
  >>> townsInfo : pool-1-thread-2 -  >>> 恆春鎮
  >>> townsInfo : pool-1-thread-2 -  >>> 滿州鄉
- >>>>>>>>>> cityInfo : pool-1-thread-4 , CityName = 金門 , CityId = 19 
- >>> townsInfo : pool-1-thread-4 -  >>> 金沙鎮
- >>> townsInfo : pool-1-thread-4 -  >>> 金湖鎮
- >>> townsInfo : pool-1-thread-4 -  >>> 金寧鄉
- >>> townsInfo : pool-1-thread-4 -  >>> 金城鎮
- >>> townsInfo : pool-1-thread-4 -  >>> 烈嶼鄉
- >>> townsInfo : pool-1-thread-4 -  >>> 烏坵鄉
- >>>>>>>>>> cityInfo : pool-1-thread-1 , CityName = 台東 , CityId = 21 
- >>> townsInfo : pool-1-thread-1 -  >>> 台東市
- >>> townsInfo : pool-1-thread-1 -  >>> 綠島鄉
- >>> townsInfo : pool-1-thread-1 -  >>> 蘭嶼鄉
- >>> townsInfo : pool-1-thread-1 -  >>> 延平鄉
- >>> townsInfo : pool-1-thread-1 -  >>> 卑南鄉
- >>> townsInfo : pool-1-thread-1 -  >>> 鹿野鄉
- >>> townsInfo : pool-1-thread-1 -  >>> 關山鎮
- >>> townsInfo : pool-1-thread-1 -  >>> 海端鄉
- >>> townsInfo : pool-1-thread-1 -  >>> 池上鄉
- >>> townsInfo : pool-1-thread-1 -  >>> 東河鄉
- >>> townsInfo : pool-1-thread-1 -  >>> 成功鎮
- >>> townsInfo : pool-1-thread-1 -  >>> 長濱鄉
- >>> townsInfo : pool-1-thread-1 -  >>> 太麻里鄉
- >>> townsInfo : pool-1-thread-1 -  >>> 金峰鄉
- >>> townsInfo : pool-1-thread-1 -  >>> 大武鄉
- >>> townsInfo : pool-1-thread-1 -  >>> 達仁鄉
- >>>>>>>>>> cityInfo : pool-1-thread-5 , CityName = 花蓮 , CityId = 22 
- >>> townsInfo : pool-1-thread-5 -  >>> 花蓮市
- >>> townsInfo : pool-1-thread-5 -  >>> 新城鄉
- >>> townsInfo : pool-1-thread-5 -  >>> 秀林鄉
- >>> townsInfo : pool-1-thread-5 -  >>> 吉安鄉
- >>> townsInfo : pool-1-thread-5 -  >>> 壽豐鄉
- >>> townsInfo : pool-1-thread-5 -  >>> 鳳林鎮
- >>> townsInfo : pool-1-thread-5 -  >>> 光復鄉
- >>> townsInfo : pool-1-thread-5 -  >>> 豐濱鄉
- >>> townsInfo : pool-1-thread-5 -  >>> 瑞穗鄉
- >>> townsInfo : pool-1-thread-5 -  >>> 萬榮鄉
- >>> townsInfo : pool-1-thread-5 -  >>> 玉里鎮
- >>> townsInfo : pool-1-thread-5 -  >>> 卓溪鄉
- >>> townsInfo : pool-1-thread-5 -  >>> 富里鄉
+ >>>>>>>>>> cityInfo : pool-1-thread-4 , CityName = 高雄 , CityId = 17 
+ >>> townsInfo : pool-1-thread-4 -  >>> 新興區
+ >>> townsInfo : pool-1-thread-4 -  >>> 前金區
+ >>> townsInfo : pool-1-thread-4 -  >>> 苓雅區
+ >>> townsInfo : pool-1-thread-4 -  >>> 鹽埕區
+ >>> townsInfo : pool-1-thread-4 -  >>> 鼓山區
+ >>> townsInfo : pool-1-thread-4 -  >>> 旗津區
+ >>> townsInfo : pool-1-thread-4 -  >>> 前鎮區
+ >>> townsInfo : pool-1-thread-4 -  >>> 三民區
+ >>> townsInfo : pool-1-thread-4 -  >>> 楠梓區
+ >>> townsInfo : pool-1-thread-4 -  >>> 小港區
+ >>> townsInfo : pool-1-thread-4 -  >>> 左營區
+ >>> townsInfo : pool-1-thread-4 -  >>> 仁武區
+ >>> townsInfo : pool-1-thread-4 -  >>> 大社區
+ >>> townsInfo : pool-1-thread-4 -  >>> 岡山區
+ >>> townsInfo : pool-1-thread-4 -  >>> 路竹區
+ >>> townsInfo : pool-1-thread-4 -  >>> 阿蓮區
+ >>> townsInfo : pool-1-thread-4 -  >>> 田寮區
+ >>> townsInfo : pool-1-thread-4 -  >>> 燕巢區
+ >>> townsInfo : pool-1-thread-4 -  >>> 橋頭區
+ >>> townsInfo : pool-1-thread-4 -  >>> 梓官區
+ >>> townsInfo : pool-1-thread-4 -  >>> 彌陀區
+ >>> townsInfo : pool-1-thread-4 -  >>> 永安區
+ >>> townsInfo : pool-1-thread-4 -  >>> 湖內區
+ >>> townsInfo : pool-1-thread-4 -  >>> 鳳山區
+ >>> townsInfo : pool-1-thread-4 -  >>> 大寮區
+ >>> townsInfo : pool-1-thread-4 -  >>> 林園區
+ >>> townsInfo : pool-1-thread-4 -  >>> 鳥松區
+ >>> townsInfo : pool-1-thread-4 -  >>> 大樹區
+ >>> townsInfo : pool-1-thread-4 -  >>> 旗山區
+ >>> townsInfo : pool-1-thread-4 -  >>> 美濃區
+ >>> townsInfo : pool-1-thread-4 -  >>> 六龜區
+ >>> townsInfo : pool-1-thread-4 -  >>> 內門區
+ >>> townsInfo : pool-1-thread-4 -  >>> 杉林區
+ >>> townsInfo : pool-1-thread-4 -  >>> 甲仙區
+ >>> townsInfo : pool-1-thread-4 -  >>> 桃源區
+ >>> townsInfo : pool-1-thread-4 -  >>> 那瑪夏區
+ >>> townsInfo : pool-1-thread-4 -  >>> 茂林區
+ >>> townsInfo : pool-1-thread-4 -  >>> 茄萣區
+ >>>>>>>>>> cityInfo : pool-1-thread-5 , CityName = 澎湖 , CityId = 18 
+ >>> townsInfo : pool-1-thread-5 -  >>> 馬公市
+ >>> townsInfo : pool-1-thread-5 -  >>> 西嶼鄉
+ >>> townsInfo : pool-1-thread-5 -  >>> 望安鄉
+ >>> townsInfo : pool-1-thread-5 -  >>> 七美鄉
+ >>> townsInfo : pool-1-thread-5 -  >>> 白沙鄉
+ >>> townsInfo : pool-1-thread-5 -  >>> 湖西鄉
+ >>>>>>>>>> cityInfo : pool-1-thread-3 , CityName = 台東 , CityId = 21 
+ >>> townsInfo : pool-1-thread-3 -  >>> 台東市
+ >>> townsInfo : pool-1-thread-3 -  >>> 綠島鄉
+ >>> townsInfo : pool-1-thread-3 -  >>> 蘭嶼鄉
+ >>> townsInfo : pool-1-thread-3 -  >>> 延平鄉
+ >>> townsInfo : pool-1-thread-3 -  >>> 卑南鄉
+ >>> townsInfo : pool-1-thread-3 -  >>> 鹿野鄉
+ >>> townsInfo : pool-1-thread-3 -  >>> 關山鎮
+ >>> townsInfo : pool-1-thread-3 -  >>> 海端鄉
+ >>> townsInfo : pool-1-thread-3 -  >>> 池上鄉
+ >>> townsInfo : pool-1-thread-3 -  >>> 東河鄉
+ >>> townsInfo : pool-1-thread-3 -  >>> 成功鎮
+ >>> townsInfo : pool-1-thread-3 -  >>> 長濱鄉
+ >>> townsInfo : pool-1-thread-3 -  >>> 太麻里鄉
+ >>> townsInfo : pool-1-thread-3 -  >>> 金峰鄉
+ >>> townsInfo : pool-1-thread-3 -  >>> 大武鄉
+ >>> townsInfo : pool-1-thread-3 -  >>> 達仁鄉
+ >>>>>>>>>> cityInfo : pool-1-thread-1 , CityName = 花蓮 , CityId = 22 
+ >>> townsInfo : pool-1-thread-1 -  >>> 花蓮市
+ >>> townsInfo : pool-1-thread-1 -  >>> 新城鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 秀林鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 吉安鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 壽豐鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 鳳林鎮
+ >>> townsInfo : pool-1-thread-1 -  >>> 光復鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 豐濱鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 瑞穗鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 萬榮鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 玉里鎮
+ >>> townsInfo : pool-1-thread-1 -  >>> 卓溪鄉
+ >>> townsInfo : pool-1-thread-1 -  >>> 富里鄉
