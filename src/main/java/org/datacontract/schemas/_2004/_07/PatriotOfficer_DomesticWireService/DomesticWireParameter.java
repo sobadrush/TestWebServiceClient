@@ -7,6 +7,9 @@
 
 package org.datacontract.schemas._2004._07.PatriotOfficer_DomesticWireService;
 
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 public class DomesticWireParameter  implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -1191,5 +1194,11 @@ public class DomesticWireParameter  implements java.io.Serializable {
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }
-
+    
+	@Override
+	public String toString() {
+		boolean outputTransients = false;
+		boolean outputStatics = false;
+		return ReflectionToStringBuilder.toString(this, ToStringStyle.MULTI_LINE_STYLE , outputTransients, outputStatics);
+	}
 }
