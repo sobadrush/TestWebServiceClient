@@ -1,13 +1,17 @@
 package com.ctbc.test;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map.Entry;
 import java.util.Properties;
@@ -31,9 +35,9 @@ public class TestReadProp {
 
 	private String propFileName = "mytest.properties";
 
-	@org.junit.Rule 
+	@org.junit.Rule
 	public org.junit.rules.TestName testCaseName = new TestName();
-	
+
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -45,7 +49,7 @@ public class TestReadProp {
 	@Before
 	public void setUp() throws Exception {
 		System.out.println(String.format("============================================================="));
-		System.out.println(String.format("========================== %s ========================", testCaseName.getMethodName()));
+		System.out.println(String.format("=========================== %s =========================", testCaseName.getMethodName()));
 		System.out.println(String.format("============================================================="));
 	}
 
@@ -115,9 +119,9 @@ public class TestReadProp {
 
 		System.out.println(domesticWireParameter);
 	}
-	
+
 	@Test
-//	@Ignore
+	@Ignore
 	public void test004() {
 		Properties props = new Properties();
 		try {
@@ -125,27 +129,69 @@ public class TestReadProp {
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-		
+
 		List<DomesticWireParameter> domesticList = new ArrayList<>();
 		ClassLoader classloader = Thread.currentThread().getContextClassLoader();
 		try (BufferedReader br = new BufferedReader(
-						new InputStreamReader(new FileInputStream(
-										FileUtils.getFile(classloader.getResource("20181015105937_Z00039837_TCoE.dat").getFile())), StandardCharsets.UTF_16));) {
+				new InputStreamReader(new FileInputStream(
+						FileUtils.getFile(classloader.getResource("20181015105937_Z00039837_TCoE.dat").getFile())), StandardCharsets.UTF_16));) {
 			String rowStr = "";
-			while ( ( rowStr = br.readLine()) != null) {
+			while ((rowStr = br.readLine()) != null) {
 				DomesticWireParameter vo = generateDomesticVO(rowStr, props);
 				// System.out.println(vo);
 				domesticList.add(vo);
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
-		} 
-		
+		}
+
 		//----------------------
 		System.err.println("domesticList.size() >>> " + domesticList.size());
 		for (DomesticWireParameter domesticWireParameterVO : domesticList) {
 			System.out.println("domesticWireParameterVO = " + domesticWireParameterVO);
 		}
+	}
+
+	@Test
+//	@Ignore
+	public void test005() {
+		ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+		File ff = FileUtils.toFile(classloader.getResource("20181015105937_Z00039837_TCoE.dat"));
+		System.out.println(">>> ff.exists() = " + ff.exists());
+		System.out.println("########################################################################");
+
+		try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream(ff));) {
+
+			int readCount = 0;
+			byte[] byteArray = new byte[938];
+			while ((readCount = bis.read(byteArray)) != -1) {
+//				System.err.println(">>> readCount >>> :" + rd);
+				System.out.println(new String(byteArray, "utf16"));
+				System.out.println("-----------------------------------------------");
+
+				byte[] slice = Arrays.copyOfRange(byteArray, 0, 4);
+				System.out.println("slice.length = " + slice.length);
+				System.out.println(new String(slice, "utf16"));
+				System.out.println(new String(slice));
+				
+				byte[] slice2 = Arrays.copyOfRange(byteArray, 0, 4);
+				System.out.println("slice.length = " + slice2.length);
+				System.out.println(new String(slice2).getBytes("utf16"));
+				System.out.println(new String(new String(slice2).getBytes("utf16"), "utf8"));
+				break;
+			}
+
+//			for (int i = 0 ; i < byteArray.length ; i++) {
+//				char cc = (char) byteArray[i];
+//				System.out.print(cc);
+//			}
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+
 	}
 
 	// https://stackoverflow.com/questions/26357938/detect-chinese-character-in-java
@@ -165,9 +211,11 @@ public class TestReadProp {
 		}
 		return sb.toString();
 	}
-	
-	/**http://mactruecolor.blogspot.com/2011/03/blog-post.html
+
+	/**
+	 * http://mactruecolor.blogspot.com/2011/03/blog-post.html
 	 * 全型轉半型
+	 * 
 	 * @param source
 	 * @return
 	 */
@@ -175,23 +223,25 @@ public class TestReadProp {
 		if (null == source) {
 			return null;
 		}
-		
+
 		char[] charArray = source.toCharArray();
-		for (int i = 0; i < charArray.length; i++) {
+		for (int i = 0 ; i < charArray.length ; i++) {
 			int ic = (int) charArray[i];
-			
+
 			if (ic >= 65281 && ic <= 65374) {
 				charArray[i] = (char) (ic - 65248);
 			} else if (ic == 12288) {
 				charArray[i] = (char) 32;
 			}
-			
+
 		}
 		return new String(charArray);
 	}
-	
-	/**http://mactruecolor.blogspot.com/2011/03/blog-post.html
+
+	/**
+	 * http://mactruecolor.blogspot.com/2011/03/blog-post.html
 	 * 半型轉全型
+	 * 
 	 * @param source
 	 * @return
 	 */
@@ -199,21 +249,21 @@ public class TestReadProp {
 		if (null == source) {
 			return null;
 		}
-		
+
 		char[] charArray = source.toCharArray();
-		for (int i = 0; i < charArray.length; i++) {
+		for (int i = 0 ; i < charArray.length ; i++) {
 			int ic = (int) charArray[i];
-			
+
 			if (ic >= 33 && ic <= 126) {
 				charArray[i] = (char) (ic + 65248);
 			} else if (ic == 32) {
 				charArray[i] = (char) 12288;
 			}
-			
+
 		}
 		return new String(charArray);
 	}
-	
+
 	public static DomesticWireParameter generateDomesticVO(String rowStr, Properties props) {
 		DomesticWireParameter domesticWireParameter = new DomesticWireParameter();
 		Set<Entry<Object, Object>> pSet = props.entrySet();
@@ -252,5 +302,5 @@ public class TestReadProp {
 		}
 		return domesticWireParameter;
 	}
-	
+
 }
