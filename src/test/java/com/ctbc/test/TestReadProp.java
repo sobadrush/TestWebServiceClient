@@ -23,13 +23,17 @@ import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TestReadProp {
 
-	private String propFileName;
+	private String propFileName = "mytest.properties";
 
+	@org.junit.Rule 
+	public org.junit.rules.TestName testCaseName = new TestName();
+	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -40,7 +44,9 @@ public class TestReadProp {
 
 	@Before
 	public void setUp() throws Exception {
-		this.propFileName = "mytest.properties";
+		System.out.println(String.format("============================================================="));
+		System.out.println(String.format("========================== %s ========================", testCaseName.getMethodName()));
+		System.out.println(String.format("============================================================="));
 	}
 
 	@After
