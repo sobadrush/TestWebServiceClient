@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -137,54 +138,169 @@ public class TestReadProp {
 						FileUtils.getFile(classloader.getResource("20181015105937_Z00039837_TCoE.dat").getFile())), StandardCharsets.UTF_16));) {
 			String rowStr = "";
 			while ((rowStr = br.readLine()) != null) {
-				DomesticWireParameter vo = generateDomesticVO(rowStr, props);
-				// System.out.println(vo);
-				domesticList.add(vo);
+				System.out.println(rowStr);
+//				DomesticWireParameter vo = generateDomesticVO(rowStr, props);
+//				System.out.println(vo);
+//				domesticList.add(vo);
 			}
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
 		//----------------------
-		System.err.println("domesticList.size() >>> " + domesticList.size());
+		System.out.println("@@ domesticList.size() >>> " + domesticList.size());
 		for (DomesticWireParameter domesticWireParameterVO : domesticList) {
 			System.out.println("domesticWireParameterVO = " + domesticWireParameterVO);
 		}
 	}
 
+	/**
+	 * BufferedReader 讀 UTF_16 使用 char[]
+	 */
+	@Test
+	@Ignore
+	public void test005() {
+
+		final int BUFF_SIZE = 938 + 2;
+
+		Properties props = new Properties();
+		try {
+			props.load(new InputStreamReader(getClass().getClassLoader().getResourceAsStream(propFileName), StandardCharsets.UTF_8));
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+
+		List<DomesticWireParameter> domesticList = new ArrayList<>();
+		ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+		try (BufferedReader br = new BufferedReader(
+				new InputStreamReader(new FileInputStream(
+						FileUtils.getFile(classloader.getResource("20181015105937_Z00039837_TCoE.dat").getFile())), StandardCharsets.UTF_16));) {
+
+			char[] charbuff = new char[BUFF_SIZE]; //TODO : 長度改變量
+			int readed = 0;
+			while ((readed = br.read(charbuff)) != -1) {
+				System.out.println(" >>> readed >>> " + readed);
+//				char[] sliceArr = Arrays.copyOfRange(charbuff, 7 - 1, 26);
+//				System.out.println(new String(sliceArr));
+
+				DomesticWireParameter vo = generateDomesticVO(charbuff, props);
+//				System.out.println("==============================================================================================");
+//				System.out.println(vo);
+				domesticList.add(vo);
+
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		//----------------------
+		System.out.println();
+		System.out.println("@@ domesticList.size() >>> " + domesticList.size());
+		for (DomesticWireParameter domesticWireParameterVO : domesticList) {
+			System.out.println("domesticWireParameterVO = " + domesticWireParameterVO);
+		}
+	}
+	
+	/**
+	 * BufferedReader 讀 BIG5 使用 char[]
+	 */
+	@Test
+	@Ignore
+	public void test006() {
+		
+		final int BUFF_SIZE = 938 + 2;
+		
+		Properties props = new Properties();
+		try {
+			props.load(new InputStreamReader(getClass().getClassLoader().getResourceAsStream(propFileName), StandardCharsets.UTF_8));
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		
+		List<DomesticWireParameter> domesticList = new ArrayList<>();
+		ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+		try (BufferedReader br = new BufferedReader(
+				new InputStreamReader(new FileInputStream(
+						FileUtils.getFile(classloader.getResource("20181015105937_Z00039837_TCoE_BIG5.dat").getFile())), Charset.forName("BIG5")));) {
+			
+			char[] charbuff = new char[BUFF_SIZE]; //TODO : 長度改變量
+			int readed = 0;
+			while ((readed = br.read(charbuff)) != -1) {
+				System.out.println(" >>> readed >>> " + readed);
+//				char[] sliceArr = Arrays.copyOfRange(charbuff, 7 - 1, 26);
+//				System.out.println(new String(sliceArr));
+				
+				DomesticWireParameter vo = generateDomesticVO(charbuff, props);
+//				System.out.println("==============================================================================================");
+//				System.out.println(vo);
+				domesticList.add(vo);
+				
+			}
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		//----------------------
+		System.out.println();
+		System.out.println("@@ domesticList.size() >>> " + domesticList.size());
+		for (DomesticWireParameter domesticWireParameterVO : domesticList) {
+			System.out.println("domesticWireParameterVO = " + domesticWireParameterVO);
+		}
+	}
+
+	/**
+	 * BufferedInputStream 讀 BIG5 使用 byte[]
+	 */
 	@Test
 //	@Ignore
-	public void test005() {
+	public void test007() {
+
+		final int BUFF_SIZE = 938 + 2;
+
+		Properties props = new Properties();
+		try {
+			props.load(new InputStreamReader(getClass().getClassLoader().getResourceAsStream(propFileName), StandardCharsets.UTF_8));
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		
 		ClassLoader classloader = Thread.currentThread().getContextClassLoader();
-		File ff = FileUtils.toFile(classloader.getResource("20181015105937_Z00039837_TCoE.dat"));
+//		File ff = FileUtils.toFile(classloader.getResource("20181015105937_Z00039837_TCoE.dat"));
+		File ff = FileUtils.toFile(classloader.getResource("20181015105937_Z00039837_TCoE_BIG5.dat"));
 		System.out.println(">>> ff.exists() = " + ff.exists());
 		System.out.println("########################################################################");
 
+		List<DomesticWireParameter> domesticList = new ArrayList<>();
+		
+//		try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream(ff));) {
 		try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream(ff));) {
 
-			int readCount = 0;
-			byte[] byteArray = new byte[938];
-			while ((readCount = bis.read(byteArray)) != -1) {
-//				System.err.println(">>> readCount >>> :" + rd);
-				System.out.println(new String(byteArray, "utf16"));
-				System.out.println("-----------------------------------------------");
+			int readed = 0;
+			byte[] byteArray = new byte[BUFF_SIZE];
+			while ((readed = bis.read(byteArray)) != -1) {
+				System.err.println(">>> readed >>> :" + readed);
 
-				byte[] slice = Arrays.copyOfRange(byteArray, 0, 4);
-				System.out.println("slice.length = " + slice.length);
-				System.out.println(new String(slice, "utf16"));
-				System.out.println(new String(slice));
+//				byte[] slice = Arrays.copyOfRange(byteArray, 1-1, 2);
+//				System.out.println("slice.length = " + slice.length);
+//				System.out.println(new String(slice, StandardCharsets.US_ASCII));
+//				System.out.println(new String(slice, StandardCharsets.UTF_16));
+//				System.out.println(new String(slice));
+
+				DomesticWireParameter vo = generateDomesticVO(byteArray, props, "BIG5");
+				domesticList.add(vo);
 				
-				byte[] slice2 = Arrays.copyOfRange(byteArray, 0, 4);
-				System.out.println("slice.length = " + slice2.length);
-				System.out.println(new String(slice2).getBytes("utf16"));
-				System.out.println(new String(new String(slice2).getBytes("utf16"), "utf8"));
-				break;
+//				break;
 			}
-
-//			for (int i = 0 ; i < byteArray.length ; i++) {
-//				char cc = (char) byteArray[i];
-//				System.out.print(cc);
-//			}
+			
+			//----------------------
+			System.out.println();
+			System.out.println("@@ domesticList.size() >>> " + domesticList.size());
+			for (DomesticWireParameter domesticWireParameterVO : domesticList) {
+				System.out.println("domesticWireParameterVO = " + domesticWireParameterVO);
+			}
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -194,7 +310,77 @@ public class TestReadProp {
 
 	}
 
+	@Test
+	@Ignore
+	public void test008() {
+		ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+//		File ff = FileUtils.toFile(classloader.getResource("20181015105937_Z00039837_TCoE.dat"));
+		File ff = FileUtils.toFile(classloader.getResource("20181015105937_Z00039837_TCoE_BIG5.dat"));
+		System.out.println(">>> ff.exists() = " + ff.exists());
+		System.out.println("########################################################################");
+
+		try (InputStreamReader isr = new InputStreamReader(new FileInputStream(ff), StandardCharsets.US_ASCII)) {
+
+			char[] charBuff = new char[938 + 2];
+			int readed;
+			while ((readed = isr.read(charBuff)) != -1) {
+				// System.out.println("readed = " + readed);
+//				System.out.flush();
+//				for (char c : charBuff) {
+//					System.out.print(c);
+//				}
+
+				char[] slice = Arrays.copyOfRange(charBuff, 3 - 1, 6);
+				System.out.println("slice.length = " + slice.length);
+//				System.out.println(new String(slice, StandardCharsets.UTF_16LE));
+				System.out.println(new String(slice));
+
+//				break;
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+	
+	@Test
+	@Ignore
+	public void test009() {
+		ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+		File ff = FileUtils.toFile(classloader.getResource("20181015105937_Z00039837_TCoE.dat"));
+//		File ff = FileUtils.toFile(classloader.getResource("20181015105937_Z00039837_TCoE_BIG5.dat"));
+		System.out.println(">>> ff.exists() = " + ff.exists());
+		System.out.println("########################################################################");
+		
+		try (InputStreamReader isr = new InputStreamReader(new FileInputStream(ff), StandardCharsets.UTF_16)) {
+			
+			char[] charBuff = new char[938 + 2];
+			int readed;
+			while ((readed = isr.read(charBuff)) != -1) {
+				// System.out.println("readed = " + readed);
+//				System.out.flush();
+//				for (char c : charBuff) {
+//					System.out.print(c);
+//				}
+				
+				char[] slice = Arrays.copyOfRange(charBuff, 3 , 6);
+				System.out.println("slice.length = " + slice.length);
+//				System.out.println(new String(slice, StandardCharsets.UTF_16LE));
+				System.out.println(new String(slice));
+				
+//				break;
+			}
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+
 	// https://stackoverflow.com/questions/26357938/detect-chinese-character-in-java
+	// https://www.cnblogs.com/zztt/p/3427452.html
 	public static String stringDataConverter(String str) {
 		StringBuffer sb = new StringBuffer();
 		for (int i = 0 ; i < str.length() ;) {
@@ -203,10 +389,13 @@ public class TestReadProp {
 			i += Character.charCount(codepoint);
 			if (Character.UnicodeScript.of(codepoint) == Character.UnicodeScript.HAN) { // 中文
 				// System.out.println(tmpStr);
-				sb.append(convertToFullWidth(tmpStr));
+				sb.append(convertToFullWidth(tmpStr));// 轉全形
 			} else if (Character.UnicodeScript.of(codepoint) == Character.UnicodeScript.LATIN) { // 英文
 				// System.out.println(tmpStr);
-				sb.append(convertToHalfWidth(tmpStr));
+				sb.append(convertToHalfWidth(tmpStr));// 轉半形
+			} else if (Character.UnicodeScript.of(codepoint) == Character.UnicodeScript.COMMON) { // 空格 逗號...
+				// System.out.println(tmpStr);
+				sb.append(convertToHalfWidth(tmpStr));// 轉半形
 			}
 		}
 		return sb.toString();
@@ -293,6 +482,84 @@ public class TestReadProp {
 						break;
 					default:
 						BeanUtils.setProperty(domesticWireParameter, kk, rowStr.substring(from, to));
+						break;
+				}
+			} catch (IllegalAccessException | InvocationTargetException | NumberFormatException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return domesticWireParameter;
+	}
+	
+	public static DomesticWireParameter generateDomesticVO(byte[] rowByTes, Properties props, String encoding) {
+		DomesticWireParameter domesticWireParameter = new DomesticWireParameter();
+		Set<Entry<Object, Object>> pSet = props.entrySet();
+		for (Entry<Object, Object> entry : pSet) {
+			String kk = (String) entry.getKey();
+			String vv = (String) entry.getValue();
+			
+			int from = Integer.parseInt(vv.split(" ")[1]) - 1;
+			int to = Integer.parseInt(vv.split(" ")[2]);
+			
+			if ((to - from) != Integer.parseInt(vv.split(" ")[0])) {
+				throw new RuntimeException("長度不符!");
+			}
+			
+			System.out.println(String.format("%-20s |  %-15s |  %-200s", kk, vv, new String(rowByTes, Charset.forName(encoding)).trim()));
+			
+			try {
+				switch (kk) {
+					case "beneficiaryAmount":
+					case "remitAmount":;
+						BeanUtils.setProperty(domesticWireParameter, kk, new BigDecimal(new String(Arrays.copyOfRange(rowByTes, from, to), Charset.forName(encoding)).trim()));
+						break;
+					case "remitName":
+					case "beneficiaryName":
+					case "agentName":
+						BeanUtils.setProperty(domesticWireParameter, kk, stringDataConverter(new String(Arrays.copyOfRange(rowByTes, from, to), Charset.forName(encoding)).trim()));
+						break;
+					default:
+						BeanUtils.setProperty(domesticWireParameter, kk, new String(Arrays.copyOfRange(rowByTes, from, to), Charset.forName(encoding)).trim());
+						break;
+				}
+			} catch (IllegalAccessException | InvocationTargetException | NumberFormatException e) {
+				e.printStackTrace();
+			}
+			
+		}
+		return domesticWireParameter;
+	}
+
+	public static DomesticWireParameter generateDomesticVO(char[] rowChars, Properties props) {
+		DomesticWireParameter domesticWireParameter = new DomesticWireParameter();
+		Set<Entry<Object, Object>> pSet = props.entrySet();
+		for (Entry<Object, Object> entry : pSet) {
+			String kk = (String) entry.getKey();
+			String vv = (String) entry.getValue();
+
+			int from = Integer.parseInt(vv.split(" ")[1]) - 1;
+			int to = Integer.parseInt(vv.split(" ")[2]);
+
+			if ((to - from) != Integer.parseInt(vv.split(" ")[0])) {
+				throw new RuntimeException("長度不符!");
+			}
+
+			System.out.println(String.format("%-20s |  %-15s  | %-200s", kk, vv, String.valueOf(Arrays.copyOfRange(rowChars, 0, rowChars.length))));
+
+			try {
+				switch (kk) {
+					case "beneficiaryAmount":
+					case "remitAmount":
+						BeanUtils.setProperty(domesticWireParameter, kk, new BigDecimal(Arrays.copyOfRange(rowChars, from, to)));
+						break;
+					case "remitName":
+					case "beneficiaryName":
+					case "agentName":
+						BeanUtils.setProperty(domesticWireParameter, kk, stringDataConverter(String.valueOf(Arrays.copyOfRange(rowChars, from, to))));
+						break;
+					default:
+						BeanUtils.setProperty(domesticWireParameter, kk, String.valueOf(Arrays.copyOfRange(rowChars, from, to)));
 						break;
 				}
 			} catch (IllegalAccessException | InvocationTargetException | NumberFormatException e) {

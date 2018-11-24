@@ -39,3 +39,15 @@ https://www.programering.com/a/MzN1czNwATQ.html
 
 【decode / encode UTF8】
 https://stackoverflow.com/questions/88838/how-to-convert-strings-to-and-from-utf8-byte-arrays-in-java
+
+【全形半形轉換】
+https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/98461/
+http://mactruecolor.blogspot.com/2011/03/blog-post.html
+
+【JAVA判斷中文 , UnicodeBlock , UnicodeScript】
+https://hk.saowen.com/a/87bc39a28c6cee503695aa7bf6eee05d2c2e52213ce1dcb2d7176fc27e5fa3ac
+https://stackoverflow.com/questions/26357938/detect-chinese-character-in-java
+https://www.cnblogs.com/zztt/p/3427452.html
+
+【可忽略BOM的stream】
+https://www.geekality.net/2011/05/23/java-how-to-deal-with-the-bom-in-a-unicode-inputstream/
