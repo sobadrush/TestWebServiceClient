@@ -51,3 +51,7 @@ https://www.cnblogs.com/zztt/p/3427452.html
 
 【可忽略BOM的stream】
 https://www.geekality.net/2011/05/23/java-how-to-deal-with-the-bom-in-a-unicode-inputstream/
+
+【如果無BOM，則在傳給Windows的地方或需要導出的地方這前先加上 BOM 才不會亂碼】
+https://www.itread01.com/articles/1475918456.html
+
