@@ -549,7 +549,7 @@ public class TestReadProp {
 
 			if (kk.equals("dataCount")) {
 				dataCount = Integer.parseInt(vv.split(" ")[3]);
-				System.out.println("dataCount >>> " + dataCount);
+//				System.out.println("dataCount >>> " + dataCount);
 				continue;
 			}
 			
@@ -562,7 +562,9 @@ public class TestReadProp {
 			}
 
 			try {
-				System.out.println(String.format("%-20s |  %-15s |  %-200s", kk, vv, new String(new String(rowBytes, 0, rowBytes.length, fromEncoding).trim().getBytes(toEncoding), toEncoding)));
+				String thName = Thread.currentThread().getName();
+				// System.out.println(String.format("%s - %-20s \t | %-10s \t | %-200s", thName , kk , vv, new String(new String(rowBytes, 0, rowBytes.length, fromEncoding).trim().getBytes(toEncoding), toEncoding)));
+				System.out.println(String.format("%s - %-20s \t | %-10s \t | %-200s", thName , kk , vv, new String(new String(rowBytes, from, difference, fromEncoding).trim().getBytes(toEncoding), toEncoding)));
 				
 				switch (kk) {
 					case "beneficiaryAmount":

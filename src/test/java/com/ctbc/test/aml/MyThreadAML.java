@@ -3,13 +3,12 @@ package com.ctbc.test.aml;
 import java.io.BufferedInputStream;
 import java.io.BufferedWriter;
 import java.io.IOException;
-import java.rmi.RemoteException;
+import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 
 import javax.xml.rpc.ServiceException;
 
 import org.datacontract.schemas._2004._07.PatriotOfficer_DomesticWireService.DomesticWireParameter;
-import org.datacontract.schemas._2004._07.PatriotOfficer_DomesticWireService.DomesticWireResult;
 
 import com.ctbc.test.TestReadProp;
 
@@ -18,14 +17,23 @@ import net.patriotofficer.DomesticWireService.IDomesticWireService;
 
 public class MyThreadAML implements Runnable {
 
-	private static int nn = 1;
-
 	private BufferedInputStream bis = null;
 	private BufferedWriter bw = null;
 	private Properties props = null;
-
+	private DomesticWireServiceLocator domesticWireServiceLocator = null; // AML WebService
+	private IDomesticWireService domesticSvc = null; // AML WebService
+	
+	{
+		this.domesticWireServiceLocator = new DomesticWireServiceLocator();// 國內匯款
+		try {
+			this.domesticSvc = domesticWireServiceLocator.getBasicHttpBinding_IDomesticWireService();
+		} catch (ServiceException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public MyThreadAML() {
-
+		super();
 	}
 
 	public MyThreadAML(BufferedInputStream bis, BufferedWriter bw) {
@@ -47,19 +55,17 @@ public class MyThreadAML implements Runnable {
 			int readed = 0;
 			byte[] byteArray = new byte[BUFF_SIZE];
 			while ((readed = bis.read(byteArray)) != -1) {
-				System.err.println(">>> readed >>> :" + readed);
-				DomesticWireParameter paramsVO = TestReadProp.generateDomesticVO(byteArray, props, "UTF8", "UTF8");
-//				System.out.println(Thread.currentThread().getName() + " >>> \n " + vo);
+				// System.err.println(">>> readed >>> :" + readed);
+				DomesticWireParameter paramsVO = TestReadProp.generateDomesticVO(byteArray, props, StandardCharsets.UTF_8.name(), StandardCharsets.UTF_8.name());
+				System.out.println(String.format("=================================== %n%s - %-10s", Thread.currentThread().getName() , paramsVO));
 				
-				DomesticWireServiceLocator domesticWireServiceLocator = new DomesticWireServiceLocator();// 國內匯款
-				try {
-					IDomesticWireService domesticSvc = domesticWireServiceLocator.getBasicHttpBinding_IDomesticWireService();
-					DomesticWireResult callBackData = domesticSvc.submitDomesticWire(paramsVO);
-					System.out.println("callBackData  = " + callBackData);
-				} catch (ServiceException | RemoteException e) {
-					e.printStackTrace();
-				}
+				bw.write(new String(byteArray).trim());
+				bw.newLine();
+				
+//				DomesticWireResult callBackData = domesticSvc.submitDomesticWire(paramsVO);
+//				System.out.println(String.format("callBackData >>> %s", callBackData));
 			}
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

@@ -62,9 +62,10 @@ public class TestAMLWebServiceThread {
 		final String propFileName = "mytest.properties";
 		final String projectDir = System.getProperty("user.dir");
 		final String filePath = projectDir + "/src/test/resources/20181015105937_Z00039837_TCoE_UTF8.dat";
+//		final String filePath = projectDir + "/src/test/resources/20181015105937_Z00039837_TCoE_BIG5.dat";
 		final String fileTargetPath = projectDir + "/src/test/resources/AML測試output.txt";
 
-		// 清空 台灣鄉鎮API查詢結果.txt
+		// 清空 AML測試output.txt
 		try {
 			FileChannel.open(Paths.get(fileTargetPath), StandardOpenOption.WRITE).truncate(0).close();
 		} catch (IOException e) {
@@ -94,7 +95,7 @@ public class TestAMLWebServiceThread {
 		BufferedInputStream bis = null;
 		BufferedWriter bw = null;
 		try {
-			bis = new BufferedInputStream(new UnicodeBOMInputStream(new FileInputStream(srcFile)).skipBOM());
+			bis = new BufferedInputStream(new UnicodeBOMInputStream(new FileInputStream(srcFile)).skipBOM());// eclipse error : https://stackoverrun.com/cn/q/9393924
 			bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(targetFile, true), StandardCharsets.UTF_8));
 		} catch (FileNotFoundException e1) {
 			e1.printStackTrace();
@@ -110,11 +111,11 @@ public class TestAMLWebServiceThread {
 
 			boolean isFinshed = false;
 			while (!(isFinshed = es.awaitTermination(1, TimeUnit.SECONDS))) { // 每隔1秒檢查Thread-Pool是否關閉
-				System.out.println("======= Thread-Pool尚未關閉 =======");
+//				System.out.println(String.format("======= %s - Thread-Pool尚未關閉 =======", Thread.currentThread().getName()));
 			}
 			
 			if (isFinshed == true) {
-				System.out.println(" Finshed >>> Thread-Pool已關閉！");
+				System.out.println(String.format("======= %s - Finshed >>> Thread-Pool已關閉！ =======", Thread.currentThread().getName()));
 				bw.close();
 				bis.close();
 			}
