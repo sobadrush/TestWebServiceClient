@@ -32,6 +32,8 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
+import com.ctbc.util.UnicodeBOMInputStream;
+
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TestReadProp {
 
@@ -144,7 +146,7 @@ public class TestReadProp {
 //				System.out.println(vo);
 //				domesticList.add(vo);
 			}
-
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -270,13 +272,14 @@ public class TestReadProp {
 
 		ClassLoader classloader = Thread.currentThread().getContextClassLoader();
 //		File ff = FileUtils.toFile(classloader.getResource("20181015105937_Z00039837_TCoE.dat"));
-		File ff = FileUtils.toFile(classloader.getResource("20181015105937_Z00039837_TCoE_BIG5.dat"));
+//		File ff = FileUtils.toFile(classloader.getResource("20181015105937_Z00039837_TCoE_BIG5.dat"));
+		File ff = FileUtils.toFile(classloader.getResource("20181015105937_Z00039837_TCoE_UTF8.dat"));
 		System.out.println(">>> ff.exists() = " + ff.exists());
 		System.out.println("########################################################################");
 
 		List<DomesticWireParameter> domesticList = new ArrayList<>();
-
-		try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream(ff));) {
+		
+		try (BufferedInputStream bis = new BufferedInputStream(new UnicodeBOMInputStream(new FileInputStream(ff)).skipBOM());) {
 
 			int readed = 0;
 			byte[] byteArray = new byte[BUFF_SIZE];
@@ -291,7 +294,8 @@ public class TestReadProp {
 
 //				DomesticWireParameter vo = generateDomesticVO(byteArray, props, "BIG5");
 //				DomesticWireParameter vo = generateDomesticVO(byteArray, props, "UTF-16", "UTF-16");
-				DomesticWireParameter vo = generateDomesticVO(byteArray, props, "BIG5", "BIG5");
+//				DomesticWireParameter vo = generateDomesticVO(byteArray, props, "BIG5", "BIG5");
+				DomesticWireParameter vo = generateDomesticVO(byteArray, props, "UTF8", "UTF8");
 				domesticList.add(vo);
 
 //				break;
@@ -545,6 +549,7 @@ public class TestReadProp {
 
 			if (kk.equals("dataCount")) {
 				dataCount = Integer.parseInt(vv.split(" ")[3]);
+				System.out.println("dataCount >>> " + dataCount);
 				continue;
 			}
 			

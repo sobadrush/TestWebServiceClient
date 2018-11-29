@@ -1,10 +1,21 @@
 package com.ctbc.test.aml;
 
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.math.BigDecimal;
+import java.nio.charset.StandardCharsets;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Properties;
 
 import javax.xml.rpc.ServiceException;
 
+import org.apache.commons.io.FileUtils;
 import org.datacontract.schemas._2004._07.PatriotOfficer_DomesticWireService.DomesticWireParameter;
 import org.datacontract.schemas._2004._07.PatriotOfficer_DomesticWireService.DomesticWireResult;
 import org.junit.After;
@@ -12,9 +23,13 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
+
+import com.ctbc.test.TestReadProp;
+import com.ctbc.util.UnicodeBOMInputStream;
 
 import net.patriotofficer.DomesticWireService.DomesticWireServiceLocator;
 import net.patriotofficer.DomesticWireService.IDomesticWireService;
@@ -47,7 +62,7 @@ public class TestAMLWebService {
 	}
 
 	@Test
-//	@Ignore
+	@Ignore
 	public void test001() {
 		DomesticWireServiceLocator domesticWireServiceLocator = new DomesticWireServiceLocator();// 國內匯款
 		try {
@@ -61,7 +76,7 @@ public class TestAMLWebService {
 	}
 
 	@Test
-//	@Ignore
+	@Ignore
 	public void test002() {
 		String endPoint = "http://172.24.30.55:4445/DomesticWire.svc?wsdl";
 		IDomesticWireServiceProxy iDomesticWireServiceProxy = new IDomesticWireServiceProxy(endPoint);
@@ -88,6 +103,69 @@ public class TestAMLWebService {
 //		th.start();
 	}
 
+	@Test
+//	@Ignore
+	public void test003() {
+		String endPoint = "http://172.24.30.55:4445/DomesticWire.svc?wsdl";
+		IDomesticWireServiceProxy iDomesticWireServiceProxy = new IDomesticWireServiceProxy(endPoint);
+		//----------------------------------------------------------------------------
+		final String propFileName = "mytest.properties";
+		
+		final int BUFF_SIZE = 938 + 2;
+
+		Properties props = new Properties();
+		try {
+			props.load(new InputStreamReader(getClass().getClassLoader().getResourceAsStream(propFileName), StandardCharsets.UTF_8));
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+
+		ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+//		File ff = FileUtils.toFile(classloader.getResource("20181015105937_Z00039837_TCoE.dat"));
+//		File ff = FileUtils.toFile(classloader.getResource("20181015105937_Z00039837_TCoE_BIG5.dat"));
+		File ff = FileUtils.toFile(classloader.getResource("20181015105937_Z00039837_TCoE_UTF8.dat"));
+		System.out.println(">>> ff.exists() = " + ff.exists());
+		System.out.println("########################################################################");
+
+		List<DomesticWireParameter> domesticList = new ArrayList<>();
+		
+		try (BufferedInputStream bis = new BufferedInputStream(new UnicodeBOMInputStream(new FileInputStream(ff)).skipBOM());) {
+
+			int readed = 0;
+			byte[] byteArray = new byte[BUFF_SIZE];
+			while ((readed = bis.read(byteArray)) != -1) {
+				System.err.println(">>> readed >>> :" + readed);
+				DomesticWireParameter vo = TestReadProp.generateDomesticVO(byteArray, props, "UTF8", "UTF8");
+				domesticList.add(vo);
+			}
+
+			//----------------------
+			System.out.println();
+			System.out.println("@@ domesticList.size() >>> " + domesticList.size());
+			for (DomesticWireParameter domesticWireParameterVO : domesticList) {
+				System.out.println("domesticWireParameterVO = " + domesticWireParameterVO);
+			}
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		//----------------------------------------------------------------------------
+		DomesticWireParameter params = domesticList.get(0);
+//		params.setReferenceNumber("049520180723001");
+		
+//		DomesticWireParameter params = getTestAmlParameter();
+		DomesticWireResult callBackData;
+		try {
+			callBackData = iDomesticWireServiceProxy.getIDomesticWireService().submitDomesticWire(params);
+			System.out.println("callBackData  = " + callBackData);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+
+	}
+	
 	private static DomesticWireParameter getTestAmlParameter() {
 		DomesticWireParameter params = new DomesticWireParameter();
 		params.setAgentID("00039837");
