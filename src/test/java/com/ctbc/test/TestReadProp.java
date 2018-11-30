@@ -539,20 +539,11 @@ public class TestReadProp {
 	public static DomesticWireParameter generateDomesticVO(byte[] rowBytes, Properties props, String fromEncoding, String toEncoding) {
 		DomesticWireParameter domesticWireParameter = new DomesticWireParameter();
 		
-//		final byte[] bom = new byte[] {(byte) 0xEF, (byte) 0xBB, (byte) 0xBF};
-		
-		int dataCount = 0;
 		Set<Entry<Object, Object>> pSet = props.entrySet();
 		for (Entry<Object, Object> entry : pSet) {
 			String kk = (String) entry.getKey();
 			String vv = (String) entry.getValue();
 
-			if (kk.equals("dataCount")) {
-				dataCount = Integer.parseInt(vv.split(" ")[3]);
-//				System.out.println("dataCount >>> " + dataCount);
-				continue;
-			}
-			
 			int from = Integer.parseInt(vv.split(" ")[1]) - 1;
 			int to = Integer.parseInt(vv.split(" ")[2]);
 			int difference = Integer.parseInt(vv.split(" ")[0]);

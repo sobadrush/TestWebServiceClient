@@ -27,8 +27,6 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runners.MethodSorters;
 
-import com.ctbc.util.UnicodeBOMInputStream;
-
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TestAMLWebServiceThread {
 
@@ -59,10 +57,14 @@ public class TestAMLWebServiceThread {
 //	@Ignore
 	public void test001() throws InterruptedException {
 		
+		final String encoding = "BIG5";
+//		final String encoding = "UTF-8";
+		
 		final String propFileName = "mytest.properties";
 		final String projectDir = System.getProperty("user.dir");
-		final String filePath = projectDir + "/src/test/resources/20181015105937_Z00039837_TCoE_UTF8.dat";
+//		final String filePath = projectDir + "/src/test/resources/20181015105937_Z00039837_TCoE_UTF8.dat";
 //		final String filePath = projectDir + "/src/test/resources/20181015105937_Z00039837_TCoE_BIG5.dat";
+		final String filePath = projectDir + "/src/test/resources/20181015105937_Z00039837_TCoE_Big5_CHI.dat";
 		final String fileTargetPath = projectDir + "/src/test/resources/AML測試output.txt";
 
 		// 清空 AML測試output.txt
@@ -95,7 +97,8 @@ public class TestAMLWebServiceThread {
 		BufferedInputStream bis = null;
 		BufferedWriter bw = null;
 		try {
-			bis = new BufferedInputStream(new UnicodeBOMInputStream(new FileInputStream(srcFile)).skipBOM());// eclipse error : https://stackoverrun.com/cn/q/9393924
+			//bis = new BufferedInputStream(new UnicodeBOMInputStream(new FileInputStream(srcFile)).skipBOM());// eclipse error : https://stackoverrun.com/cn/q/9393924
+			bis = new BufferedInputStream(new FileInputStream(srcFile));
 			bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(targetFile, true), StandardCharsets.UTF_8));
 		} catch (FileNotFoundException e1) {
 			e1.printStackTrace();
@@ -106,7 +109,7 @@ public class TestAMLWebServiceThread {
 		//---------------------------------
 		try {
 			int threadNum = 5; /* init thread */
-			Thread[] threadArray = getMyThreads(threadNum, bis, bw, props);
+			Thread[] threadArray = getMyThreads(threadNum, bis, bw, props, encoding);
 			ExecutorService es = createExecutorService(threadArray, 5 /* max thread */);
 
 			boolean isFinshed = false;
@@ -129,10 +132,11 @@ public class TestAMLWebServiceThread {
 	}
 
 	
-	public static Thread[] getMyThreads(int numOfThread, BufferedInputStream bis, BufferedWriter bw, Properties props) {
+	public static Thread[] getMyThreads(int numOfThread, BufferedInputStream bis, BufferedWriter bw, Properties props, String encoding) {
+		MyThreadAML amlRunnableObj = new MyThreadAML(bis, bw, props, encoding);
 		Thread[] threadArr = new Thread[numOfThread];
 		for (int n = 1 ; n <= numOfThread ; n++) {
-			Thread th = new Thread(new MyThreadAML(bis, bw, props));// 自訂的Runnable類
+			Thread th = new Thread(amlRunnableObj);// 自訂的Runnable類
 			threadArr[n - 1] = th;
 		}
 		return threadArr;
