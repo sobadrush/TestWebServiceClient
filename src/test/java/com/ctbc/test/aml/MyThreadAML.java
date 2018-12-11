@@ -77,7 +77,7 @@ public class MyThreadAML implements Runnable {
 			int readed = 0;
 			while ((readed = bis.read(byteBuff)) != -1) {
 
-				System.err.println(">>> readed >>> :" + readed);
+				System.out.println(">>> readed >>> :" + readed);
 
 				DomesticWireParameter paramsVO = TestReadProp.generateDomesticVO(byteBuff, props, encoding, encoding);
 				System.out.println(String.format("=================================== %n%s - %-10s", Thread.currentThread().getName(), paramsVO));

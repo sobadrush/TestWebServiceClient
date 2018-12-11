@@ -64,7 +64,8 @@ public class TestAMLWebServiceThread {
 		final String projectDir = System.getProperty("user.dir");
 //		final String filePath = projectDir + "/src/test/resources/20181015105937_Z00039837_TCoE_UTF8.dat";
 //		final String filePath = projectDir + "/src/test/resources/20181015105937_Z00039837_TCoE_BIG5.dat";
-		final String filePath = projectDir + "/src/test/resources/20181015105937_Z00039837_TCoE_Big5_CHI.dat";
+//		final String filePath = projectDir + "/src/test/resources/20181015105937_Z00039837_TCoE_Big5_CHI.dat";
+		final String filePath = projectDir + "/src/test/resources/20181015105937_Z00039837_TCoE_Big5_CHI_5000.dat";
 		final String fileTargetPath = projectDir + "/src/test/resources/AML測試output.txt";
 
 		// 清空 AML測試output.txt
@@ -108,9 +109,12 @@ public class TestAMLWebServiceThread {
 		
 		//---------------------------------
 		try {
-			int threadNum = 5; /* init thread */
+			
+			long startSec = System.currentTimeMillis();
+			
+			int threadNum = 10; /* init thread */
 			Thread[] threadArray = getMyThreads(threadNum, bis, bw, props, encoding);
-			ExecutorService es = createExecutorService(threadArray, 5 /* max thread */);
+			ExecutorService es = createExecutorService(threadArray, 10 /* max thread */);
 
 			boolean isFinshed = false;
 			while (!(isFinshed = es.awaitTermination(1, TimeUnit.SECONDS))) { // 每隔1秒檢查Thread-Pool是否關閉
@@ -122,6 +126,21 @@ public class TestAMLWebServiceThread {
 				bw.close();
 				bis.close();
 			}
+			
+			
+			System.out.println("----------------------------------------------------------------------------");
+			System.out.println(String.format("---------------------------- Start Time : %d ---------------------------- ", startSec));
+			System.out.println("----------------------------------------------------------------------------");
+			long endSec = System.currentTimeMillis();
+			System.out.println("----------------------------------------------------------------------------");
+			System.out.println(String.format("---------------------------- End Time : %d ---------------------------- ", endSec));
+			System.out.println("----------------------------------------------------------------------------");
+			
+			System.out.println("●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●");
+			System.out.println("●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●");
+			System.out.println("●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●");
+			System.out.println(String.format("Spend Time : %s sec", (endSec - startSec) / 1000.0 ));
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
